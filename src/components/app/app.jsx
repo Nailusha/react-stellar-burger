@@ -1,17 +1,11 @@
 import styles from "./app.module.css";
+
+import AppHeader from "../header/AppHeader/AppHeader";
 import { data } from "../../utils/data.js";
+import BurgerIngridient from "../main/BurgerIngredients/BurgerIngredient/BurgerIngredient";
 
 function App() {
-  return (
-    <div className={styles.app}>
-      <pre style={{
-      	margin: "auto",
-      	fontSize: "1.5rem"
-      }}>
-      	Hi
-      </pre>
-    </div>
-  );
+
 }
 
 export default App;
