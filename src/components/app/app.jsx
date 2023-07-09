@@ -1,12 +1,14 @@
 import styles from "./app.module.css";
-import { useState } from "react";
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-import { ingridientPropType } from '../../utils/prop-types.js';
+import { useState } from "react";
+import { ingridientPropType } from '../utils/prop-types.js';
 
 import AppHeader from "../header/AppHeader/AppHeader";
-import { data } from "../../utils/data.js";
-import BurgerIngridient from "../main/BurgerIngredients/BurgerIngridient/BurgerIngridient";
+import AppMain from "../main/AppMain/AppMain";
+import Modal from "../modal/modal";
+import Details from "../modal/Details/Details";
+import ModalOverlay from '../ModalOverlay';
 
 function App() {
 
@@ -24,7 +26,7 @@ function App() {
   const childForModal = () => {
     return (
       <Modal onClick={onClick} setIsOpen={setIsOpen}>
-        {isClickOrderList && <OrderDetails/> || isClickIngridient && <Ingridient imageIngridient={imageIngridient}/>}
+        {isClickOrderList && <Details /> || isClickIngridient && <Ingridient imageIngridient={imageIngridient}/>}
       </Modal>     
     )
   }
@@ -60,7 +62,7 @@ function App() {
       {isModalOpen && (
       <> 
       {childForModal()}
-      <Overlay setClickOrderList={setClickOrderList} setIsOpen={setIsOpen} /> 
+      <ModalOverlay setClickOrderList={setClickOrderList} setIsOpen={setIsOpen} /> 
       </>
         
       )}

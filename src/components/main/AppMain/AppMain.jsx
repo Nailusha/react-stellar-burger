@@ -2,7 +2,11 @@ import React from "react";
 import styles from './AppMain.module.css';
 
 import BurgerIngridientTab from "../BurgerIngredients/BurgerIngridientTab/BurgerIngridientTab";
-
+import BurgerIngridientHead from '../BurgerIngredients/BurgerIngridientHead/BurgerIngridientHead';
+import { BurgerConstructorBottom } from "../BurgerConstructor/BurgerConstructor";
+import { BurgerConstructorMiddle } from "../BurgerConstructor/BurgerConstructor";
+import { BurgerConstructorTop } from "../BurgerConstructor/BurgerConstructor";
+import BurgerConstructorAll from "../BurgerConstructor/BurgerConstructorAll/BurgerConstructorAll";
 
 function AppMain({setClickIngridient, setIsOpen, setImageIngridient, ingridients}) {
     return (
@@ -11,19 +15,19 @@ function AppMain({setClickIngridient, setIsOpen, setImageIngridient, ingridients
         <section >
           <BurgerIngridientTab/>
           <div className={styles.main_ingridientBlock + " custom-scroll"}>
-            <IngredientBlock setIsOpen={setIsOpen} setClickIngridient={setClickIngridient} setImageIngridient={setImageIngridient} ingridients={ingridients} productName={"Булки"} typeProduct={"bun"} />
-            <IngredientBlock setIsOpen={setIsOpen} setClickIngridient={setClickIngridient} setImageIngridient={setImageIngridient} ingridients={ingridients} productName={"Соусы"} typeProduct={"sauce"} />
-            <IngredientBlock setIsOpen={setIsOpen} setClickIngridient={setClickIngridient} setImageIngridient={setImageIngridient} ingridients={ingridients} productName={"Начинки"} typeProduct={"main"} />
+            <BurgerIngridientHead setIsOpen={setIsOpen} setClickIngridient={setClickIngridient} setImageIngridient={setImageIngridient} ingridients={ingridients} productName={"Булки"} typeProduct={"bun"} />
+            <BurgerIngridientHead setIsOpen={setIsOpen} setClickIngridient={setClickIngridient} setImageIngridient={setImageIngridient} ingridients={ingridients} productName={"Соусы"} typeProduct={"sauce"} />
+            <BurgerIngridientHead setIsOpen={setIsOpen} setClickIngridient={setClickIngridient} setImageIngridient={setImageIngridient} ingridients={ingridients} productName={"Начинки"} typeProduct={"main"} />
           </div>
   
         </section>  
         <section className={styles.main_constructorBlock +' pt-25 pl-4'}>
           <BurgerConstructorTop ingridient={ingridients} index={0} />
             <div className={styles.main_constructorMidleBlock + " custom-scroll pr-2"}>
-              <BurgerConstructorMiddle ingredient={ingredients}/>
+              <BurgerConstructorMiddle ingredient={ingridients}/>
             </div>
           <BurgerConstructorBottom ingridient={ingridients} index={0} />
-          <BurgerConstructorTotal ingridients={ingridients} name={ "Оформить заказ" } />
+          <BurgerConstructorAll ingridients={ingridients} name={ "Оформить заказ" } />
         </section>
     </main>
     )
