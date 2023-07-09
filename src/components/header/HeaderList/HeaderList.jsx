@@ -6,7 +6,6 @@ import { ListIcon } from '@ya.praktikum/react-developer-burger-ui-components';
 import { Logo } from '@ya.praktikum/react-developer-burger-ui-components';
 import { ProfileIcon } from '@ya.praktikum/react-developer-burger-ui-components';
 
-import PropTypes from 'prop-types';
 
 function HeaderList({setClickOrderList, setIsOpen }) {
 
@@ -31,7 +30,7 @@ function HeaderList({setClickOrderList, setIsOpen }) {
                         <li className={styles.linkList_item}>
                             <a className={styles.header_link}>
                             <ListIcon type="primary" />
-                            <span onClick={onClick}>Лента заказов</span>
+                            <span className="pl-2 text_type_main-default" onClick={onClick}>Лента заказов</span>
                             </a>
                         </li>
 
@@ -42,7 +41,7 @@ function HeaderList({setClickOrderList, setIsOpen }) {
                         <li className={styles.linkList_item}>
                             <a className={styles.header_link}>
                             <ProfileIcon type="primary" />
-                            <p>Личный кабинет</p>
+                            <p className="pl-2 text_type_main-default">Личный кабинет</p>
                             </a>
                         </li>
                     </ul>
