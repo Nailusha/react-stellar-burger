@@ -57,7 +57,8 @@ function App() {
   return (
     <>
       <AppHeader setClickOrderList={setClickOrderList} setIsOpen={setIsOpen} />
-      <AppMain setClickIngridient={setClickIngridient} setIsOpen={setIsOpen} setImageIngridient={setImageIngridient} ingridients={dataIngridients} />
+      <AppMain setClickIngridient={setClickIngridient} setIsOpen={setIsOpen} 
+      setImageIngridient={setImageIngridient} ingridients={dataIngridients} />
 
       {isModalOpen && (
       <> 

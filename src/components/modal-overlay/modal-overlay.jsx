@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './modal-overlay.module.css'
-import ReactDom, { createPortal } from 'react-dom';
+import ReactDom  from 'react-dom';
 
 const overlayRoot = document.getElementById('react-modal')
 
