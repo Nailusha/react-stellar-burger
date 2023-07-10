@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './BurgerConstructor.module.css';
+import styles from './burger-constructor.module.css';
 
 import { DragIcon } from '@ya.praktikum/react-developer-burger-ui-components';
 import { ConstructorElement } from '@ya.praktikum/react-developer-burger-ui-components';

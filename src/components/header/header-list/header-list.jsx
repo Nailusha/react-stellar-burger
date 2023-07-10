@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './HeaderList.module.css';
+import styles from './header-list.module.css';
 
 import { BurgerIcon } from '@ya.praktikum/react-developer-burger-ui-components';
 import { ListIcon } from '@ya.praktikum/react-developer-burger-ui-components';

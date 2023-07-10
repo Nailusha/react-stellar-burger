@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Details.module.css';
+import styles from './order-details.module.css';
 import image from '../../../images/done.svg';
 
 function Details() {

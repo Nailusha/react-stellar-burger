@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Ingridient.module.css'
+import styles from './ingridient-details.module.css'
 import image from '../../../images/done.svg';
 import { string } from 'prop-types';
 

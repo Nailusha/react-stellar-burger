@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './BurgerIngridient.module.css';
+import styles from './burger-ingridient.module.css';
 import { Counter, CurrencyIcon } from '@ya.praktikum/react-developer-burger-ui-components';
 
 function BurgerIngridient({ingridient, setImageIngridient, setIsOpen, setClickIngridient}) {

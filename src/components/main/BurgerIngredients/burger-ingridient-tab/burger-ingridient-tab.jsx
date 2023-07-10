@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './BurgerIngridientTab.module.css';
+import styles from './burger-ingridient-tab.module.css';
 import { Tab } from '@ya.praktikum/react-developer-burger-ui-components';
 
 function BurgerIngridientTab() {

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './BurgerIngridientHead.module.css';
+import styles from './burger-ingridient-head.module.css';
 
 import BurgerIngridient from "../burger-ingridient/burger-ingridient";
 

@@ -1,10 +1,10 @@
 import React from "react";
-import styles from './BurgerConstructorAll.module.css'
+import styles from './burger-constructor-all.module.css'
 import { Button, CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 
 function BurgerConstructorAll({ingredients, name}) {
   return (
-    <div className={styles.constructorAll + " pt-10"}>
+    <div className={styles.constructorall + " pt-10"}>
       <div className={"pr-10"}>
         <span className="text_type_digits-medium">
           {ingredients.reduce(function (acc, data) { return acc + data.price; }, 0)}
