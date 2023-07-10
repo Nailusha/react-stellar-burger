@@ -3,10 +3,10 @@ import styles from './AppMain.module.css';
 
 import BurgerIngridientTab from "../BurgerIngredients/BurgerIngridientTab/BurgerIngridientTab";
 import BurgerIngridientHead from '../BurgerIngredients/BurgerIngridientHead/BurgerIngridientHead';
-import { BurgerConstructorBottom } from "../BurgerConstructor/BurgerConstructor";
-import { BurgerConstructorMiddle } from "../BurgerConstructor/BurgerConstructor";
-import { BurgerConstructorTop } from "../BurgerConstructor/BurgerConstructor";
-import BurgerConstructorAll from "../BurgerConstructor/BurgerConstructorAll/BurgerConstructorAll";
+import { BurgerConstructorBottom } from "../BurgerConstructor/burger-constructor";
+import { BurgerConstructorMiddle } from "../BurgerConstructor/burger-constructor";
+import { BurgerConstructorTop } from "../BurgerConstructor/burger-constructor";
+import BurgerConstructorAll from "../BurgerConstructor/burger-constructor-all/burger-constructor-all";
 
 function AppMain({setClickIngridient, setIsOpen, setImageIngridient, ingridients}) {
     return (

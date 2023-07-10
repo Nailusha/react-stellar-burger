@@ -4,18 +4,18 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import { ingridientPropType } from '../utils/prop-types.js';
 
-import AppHeader from "../header/AppHeader/AppHeader";
-import AppMain from "../main/AppMain/AppMain";
+import AppHeader from "../header/app-header/app-header";
+import AppMain from "../main/app-main/app-main";
 import Modal from "../modal/modal";
 import Details from "../modal/Details/Details";
-import ModalOverlay from '../ModalOverlay';
+import ModalOverlay from '../ModalOverlay/ModalOverlay';
+import Ingridient from "../modal/Ingridient/Ingridient";
 
 function App() {
 
   const [isModalOpen, setIsOpen] = useState(false);
   const [dataIngridients, setData] = useState([]);
   const [imageIngridient, setImageIngridient] = useState(null);
-  const [isOpenOrderDetails, setOpenOrderDetails] = useState(false);
   const [isClickOrderList, setClickOrderList] = useState(false);
   const [isClickIngridient, setClickIngridient] = useState(false);
   

@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Details.module.css';
+import image from '../../../images/done.svg';
 
 function Details() {
     return (
