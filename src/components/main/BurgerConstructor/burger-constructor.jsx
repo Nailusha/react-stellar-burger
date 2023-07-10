@@ -20,7 +20,7 @@ function BurgerConstructorTop(ingridient) {
   
   function BurgerConstructorMiddle({ingridient}) {
     return (
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '10px'}}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px'}}>
           {ingridient.map((item) => {
             return (
               <div key={item._id} style={{ display: 'flex', flexDirection: 'row', alignItems: 'center'}}>

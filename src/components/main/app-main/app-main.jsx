@@ -15,16 +15,25 @@ function AppMain({setClickIngridient, setIsOpen, setImageIngridient, ingridients
         <section >
           <BurgerIngridientTab/>
           <div className={styles.main_ingridientBlock + " custom-scroll"}>
-            <BurgerIngridientHead setIsOpen={setIsOpen} setClickIngridient={setClickIngridient} setImageIngridient={setImageIngridient} ingridients={ingridients} productName={"Булки"} typeProduct={"bun"} />
-            <BurgerIngridientHead setIsOpen={setIsOpen} setClickIngridient={setClickIngridient} setImageIngridient={setImageIngridient} ingridients={ingridients} productName={"Соусы"} typeProduct={"sauce"} />
-            <BurgerIngridientHead setIsOpen={setIsOpen} setClickIngridient={setClickIngridient} setImageIngridient={setImageIngridient} ingridients={ingridients} productName={"Начинки"} typeProduct={"main"} />
+            <BurgerIngridientHead 
+            setIsOpen={setIsOpen} setClickIngridient={setClickIngridient} 
+            setImageIngridient={setImageIngridient} ingridients={ingridients} 
+            productName={"Булки"} typeProduct={"bun"} />
+            <BurgerIngridientHead 
+            setIsOpen={setIsOpen} setClickIngridient={setClickIngridient} 
+            setImageIngridient={setImageIngridient} ingridients={ingridients} 
+            productName={"Соусы"} typeProduct={"sauce"} />
+            <BurgerIngridientHead 
+            setIsOpen={setIsOpen} setClickIngridient={setClickIngridient} 
+            setImageIngridient={setImageIngridient} ingridients={ingridients} 
+            productName={"Начинки"} typeProduct={"main"} />
           </div>
   
         </section>  
         <section className={styles.main_constructorBlock +' pt-25 pl-4'}>
           <BurgerConstructorTop ingridient={ingridients} index={0} />
             <div className={styles.main_constructorMidleBlock + " custom-scroll pr-2"}>
-              <BurgerConstructorMiddle ingredient={ingridients}/>
+              <BurgerConstructorMiddle ingridient={ingridients}/>
             </div>
           <BurgerConstructorBottom ingridient={ingridients} index={0} />
           <BurgerConstructorAll ingridients={ingridients} name={ "Оформить заказ" } />
