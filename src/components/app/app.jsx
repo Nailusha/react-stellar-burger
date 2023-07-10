@@ -7,9 +7,9 @@ import { ingridientPropType } from '../utils/prop-types.js';
 import AppHeader from "../header/app-header/app-header";
 import AppMain from "../main/app-main/app-main";
 import Modal from "../modal/modal";
-import Details from "../modal/Details/Details";
-import ModalOverlay from '../ModalOverlay/ModalOverlay';
-import Ingridient from "../modal/Ingridient/Ingridient";
+import Details from "../modal/order-details/order-details";
+import ModalOverlay from '../modal-overlay/modal-overlay';
+import Ingridient from "../modal/ingridient-details/ingridient-details";
 
 function App() {
 

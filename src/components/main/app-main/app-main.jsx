@@ -1,8 +1,8 @@
 import React from "react";
 import styles from './AppMain.module.css';
 
-import BurgerIngridientTab from "../BurgerIngredients/BurgerIngridientTab/BurgerIngridientTab";
-import BurgerIngridientHead from '../BurgerIngredients/BurgerIngridientHead/BurgerIngridientHead';
+import BurgerIngridientTab from "../BurgerIngredients/burger-ingridient-tab/burger-ingridient-tab";
+import BurgerIngridientHead from '../BurgerIngredients/burger-ingridient-head/burger-ingridient-head';
 import { BurgerConstructorBottom } from "../BurgerConstructor/burger-constructor";
 import { BurgerConstructorMiddle } from "../BurgerConstructor/burger-constructor";
 import { BurgerConstructorTop } from "../BurgerConstructor/burger-constructor";
