@@ -26,7 +26,9 @@ function Modal({ setIsOpen, children }) {
   return ReactDom.createPortal(
     (
       <div className={styles.modal}>
-        <div className={styles.close_icon}><CloseIcon onClick={onClick}/></div>
+          <div className={styles.close_icon}>
+            <CloseIcon onClick={onClick}/>
+          </div>
         {children}
       </div>
     ), modalRoot

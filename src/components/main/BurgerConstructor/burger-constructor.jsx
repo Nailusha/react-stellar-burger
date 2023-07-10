@@ -4,7 +4,7 @@ import styles from './burger-constructor.module.css';
 import { DragIcon } from '@ya.praktikum/react-developer-burger-ui-components';
 import { ConstructorElement } from '@ya.praktikum/react-developer-burger-ui-components';
 
-function BurgerConstructorTop(ingridient, index) {
+function BurgerConstructorTop(ingridient) {
     return (
         <div className={'pl-6 pt-4 pb-4'} style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
           <ConstructorElement
@@ -12,7 +12,7 @@ function BurgerConstructorTop(ingridient, index) {
             isLocked={true}
             text="Краторная булка N-200i (верх)"
             price={'1255'}
-            thumbnail={ingridient[index].image}
+            thumbnail={ingridient.image}
           />
         </div>
       )
@@ -20,7 +20,7 @@ function BurgerConstructorTop(ingridient, index) {
   
   function BurgerConstructorMiddle({ingridient}) {
     return (
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px'}}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '10px'}}>
           {ingridient.map((item) => {
             return (
               <div key={item._id} style={{ display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
@@ -38,7 +38,7 @@ function BurgerConstructorTop(ingridient, index) {
     )
   }
   
-  function BurgerConstructorBottom({ingridient, index}) {
+  function BurgerConstructorBottom({ingridient}) {
     return (
       <div className={"pl-6 pt-4"} style={{ display: 'flex', flexDirection: 'column', gap: '10px'}} >
         <ConstructorElement
@@ -46,7 +46,7 @@ function BurgerConstructorTop(ingridient, index) {
           isLocked={true}
           text="Краторная булка N-200i (низ)"
           price={200}
-          thumbnail={ingridient[index].image}
+          thumbnail={ingridient.image}
         />
       </div>
     )
