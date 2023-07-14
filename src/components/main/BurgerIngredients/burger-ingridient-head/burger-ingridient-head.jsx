@@ -9,7 +9,7 @@ function BurgerIngridientHead({setIsOpen, setClickIngridient, setImageIngridient
     return (
         <>
         <p className={"text_type_main-default " + styles.text}>{productName}</p>
-        <div className={styles.BurgerIngridient + " pt-6 pb-10 pl-4 pr-4"}>
+        <div className={styles.burgerIngridient + " pt-6 pb-10 pl-4 pr-4"}>
         {ingridients.filter(item => item.type === typeProduct).map(item => {
             
           return (
