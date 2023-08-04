@@ -23,7 +23,7 @@ export const sendOrder = (dataId) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      ingredients: dataId,
+      ingridients: dataId,
     }),
   });
 };
