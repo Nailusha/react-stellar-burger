@@ -1,8 +1,6 @@
 import styles from "./app.module.css";
 import React, { useEffect } from "react";
-import PropTypes from "prop-types";
 import { useState } from "react";
-import { ingridientPropType } from "../utils/prop-types.js";
 
 import AppHeader from "../header/app-header/app-header";
 import AppMain from "../main/app-main/app-main";
@@ -11,7 +9,58 @@ import OrderDetails from "../modal/order-details/order-details";
 import ModalOverlay from "../modal-overlay/modal-overlay";
 import IngridientDetails from "../modal/ingridient-details/ingridient-details";
 
-function App() {
+import Preloader from "../preloder/preloder";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchIngridients } from "../../services/store/reducers/ingridientQuery";
+import { ingridientSelector } from "../../services/store/selectors/ingridientSelector";
+
+
+const App = () => {
+  const [isloding, setIsLoding] = useState(false);
+  const ingridients = useSelector(ingridientSelector);
+  const { setClickOrderList, setIsOpen } = useSelector(
+    (state) => state.ModalOverlay
+  );
+  const isClickStutusIngridient = useSelector(
+    (state) => state.ingridDetails.clickStutus
+  );
+  const isClickStutusDetails = useSelector(
+    (state) => state.orderDetails.clickStutus
+  );
+
+  const dispatch = useDispatch();
+
+  const childForModal = () => {
+    return (
+      <Modal>
+        {(isClickStutusDetails && <OrderDetails />) ||
+          (isClickStutusIngridient && <IngridientDetails />)}
+      </Modal>
+    );
+  };
+
+  useEffect(() => {
+    dispatch(fetchIngridients());
+  }, []);
+
+  if (ingridients.length < 1) return null;
+
+  if (isloding) {
+    return <Preloader />;
+  }
+
+  return (
+    <>
+      <AppHeader />
+      <AppMain />
+      {setIsOpen && childForModal()}
+    </>
+  );
+};
+
+
+
+/*function App() {
   const [isModalOpen, setIsOpen] = useState(false);
   const [dataIngridients, setData] = useState([]);
   const [imageIngridient, setImageIngridient] = useState(null);
@@ -77,6 +126,9 @@ function App() {
 
 AppMain.propTypes = {
   ingridients: PropTypes.arrayOf(ingridientPropType),
-};
+};*/
 
 export default App;
+
+
+
