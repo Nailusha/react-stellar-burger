@@ -1,7 +1,7 @@
 import React from 'react';
-
 import styles from './burger-ingridient.module.css';
 import { Counter, CurrencyIcon } from '@ya.praktikum/react-developer-burger-ui-components';
+import image from '../../../../images/Rounded Rectangle.svg';
 
 function BurgerIngridient({ingridient, setImageIngridient, setIsOpen, setClickIngridient}) {
     

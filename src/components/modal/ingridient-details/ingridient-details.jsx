@@ -1,7 +1,9 @@
 import React from 'react';
 import styles from './ingridient-details.module.css'
+import { string } from 'prop-types';
+import image from '../../../images/done.svg';
 
-function Ingridient({ imageIngridient }) {
+function IngridientDetails({ imageIngridient }) {
   console.log(imageIngridient)
   return (
     <>
@@ -28,4 +30,4 @@ function Ingridient({ imageIngridient }) {
   )
 }
 
-export default Ingridient
+export default IngridientDetails

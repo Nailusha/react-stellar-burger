@@ -8,6 +8,9 @@ import { BurgerConstructorMiddle } from "../BurgerConstructor/burger-constructor
 import { BurgerConstructorTop } from "../BurgerConstructor/burger-constructor";
 import BurgerConstructorAll from "../BurgerConstructor/burger-constructor-all/burger-constructor-all";
 
+import PropTypes from 'prop-types';
+import { ingridientPropType } from '../../utils/prop-types';
+
 function AppMain({setClickIngridient, setIsOpen, setImageIngridient, ingridients}) {
     return (
       <main className={styles.main}>
@@ -42,4 +45,11 @@ function AppMain({setClickIngridient, setIsOpen, setImageIngridient, ingridients
     )
   }
   
+  AppMain.propTypes = {
+    ingridients: PropTypes.arrayOf(ingridientPropType),
+    setClickIngridient: PropTypes.func,
+    setIsOpen: PropTypes.func,
+    setImageIngridient: PropTypes.func,
+  }
+
   export default AppMain

@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './order-details.module.css';
 import image from '../../../images/done.svg';
 
-function Details() {
+function OrderDetails() {
     return (
         <>
           <div className={styles.details + ' pt-30'}>
@@ -16,4 +16,4 @@ function Details() {
       )
 }
 
-export default Details
+export default OrderDetails

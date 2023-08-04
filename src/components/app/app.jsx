@@ -7,9 +7,9 @@ import { ingridientPropType } from "../utils/prop-types.js";
 import AppHeader from "../header/app-header/app-header";
 import AppMain from "../main/app-main/app-main";
 import Modal from "../modal/modal";
-import Details from "../modal/order-details/order-details";
+import OrderDetails from "../modal/order-details/order-details";
 import ModalOverlay from "../modal-overlay/modal-overlay";
-import Ingridient from "../modal/ingridient-details/ingridient-details";
+import IngridientDetails from "../modal/ingridient-details/ingridient-details";
 
 function App() {
   const [isModalOpen, setIsOpen] = useState(false);
@@ -25,9 +25,9 @@ function App() {
   const childForModal = () => {
     return (
       <Modal onClick={onClick} setIsOpen={setIsOpen}>
-        {(isClickOrderList && <Details />) ||
+        {(isClickOrderList && <OrderDetails />) ||
           (isClickIngridient && (
-            <Ingridient imageIngridient={imageIngridient} />
+            <IngridientDetails imageIngridient={imageIngridient} />
           ))}
       </Modal>
     );

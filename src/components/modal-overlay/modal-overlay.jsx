@@ -11,10 +11,8 @@ function ModalOverlay({setClickOrderList, setIsOpen}) {
     setClickOrderList(false)
   }
 
-  return ReactDom.createPortal(
-    (
-      <div className={styles.overlay} onClick={onClick}></div>
-    ), overlayRoot
+  return (
+    <div className={styles.overlay} onClick={onClick}></div>
   )
 }
 
