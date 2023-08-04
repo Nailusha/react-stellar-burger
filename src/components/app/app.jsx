@@ -10,8 +10,8 @@ import IngridientDetails from "../modal/ingridient-details/ingridient-details";
 
 import Preloader from "../preloder/preloder";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchIngridients } from "../../services/store/reducers/ingridientQuery";
-import { ingridientSelector } from "../../services/store/selectors/ingridientSelector";
+import { fetchIngridients } from "../services/store/reducers/ingridientQuery";
+import { ingridientSelector } from "../services/store/selector/ingridientSelector";
 
 
 const App = () => {

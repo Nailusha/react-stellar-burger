@@ -1,8 +1,8 @@
 import { createSelector } from "@reduxjs/toolkit";
 import { ingridientSelector } from "./ingridientSelector";
-import { constructorSelector } from "./IngridientsSelector/constructorSelector";
+import { constructorSelector } from "./IngredientsSelector/constructorSelector";
 import { useDispatch } from "react-redux";
-import { constructorBunSelector } from "./IngridientsSelector/constructorBunSelector";
+import { constructorBunSelector } from "./IngredientsSelector/constructorBunSelector";
 
 export const memoIngridientsSelector = createSelector(
   [ingridientSelector, constructorSelector, constructorBunSelector],

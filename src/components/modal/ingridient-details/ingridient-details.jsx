@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './ingridient-details.module.css'
 import { string } from "prop-types";
 import { useSelector } from "react-redux";
-import { detailsSelector } from "../../../services/store/selectors/detailsSelector";
+import { detailsSelector } from "../../services/store/selector/detailsSelector";
 
 import image from '../../../images/done.svg';
 

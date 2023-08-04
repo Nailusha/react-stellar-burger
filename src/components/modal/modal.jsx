@@ -5,8 +5,8 @@ import ReactDom  from 'react-dom';
 import { CloseIcon } from '@ya.praktikum/react-developer-burger-ui-components';
 import ModalOverlay from "../modal-overlay/modal-overlay";
 import { useDispatch } from "react-redux";
-import { clickOpen, clickOrderList } from "../../services/store/reducers/modalOverlaySlice";
-import { clickDetails } from "../../services/store/reducers/orderDetailsSlice";
+import { clickOpen, clickOrderList } from "../services/store/reducers/modalOverlaySlice";
+import { clickDetails } from "../services/store/reducers/orderDetailsSlice";
 
 
 const modalRoot = document.getElementById('react-modal')

@@ -1,11 +1,11 @@
 import React, { useCallback, useMemo } from "react";
-import styles from "./burger-constructor-total.module.css";
+import styles from "./burger-constructor-all.module.css";
 import { Button, CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 import { useDispatch, useSelector } from "react-redux";
-import { clickOpen, clickOrderList } from "../../../../services/store/reducers/modalOverlaySlice";
-import { clickDetails } from "../../../../services/store/reducers/orderDetailsSlice";
-import { setDetails } from "../../../../services/store/reducers/detailsQuery";
-import { clearOrder } from "../../../../services/store/reducers/burgerConstructorSlice";
+import { clickOpen, clickOrderList } from "../../../services/store/reducers/modalOverlaySlice";
+import { clickDetails } from "../../../services/store/reducers/orderDetailsSlice";
+import { setDetails } from "../../../services/store/reducers/detailsQuery";
+import { clearOrder } from "../../../services/store/reducers/burgerConstructorSlice";
 
 function BurgerConstructorAll({ name }) {
   const { draggedBun, draggedIngridients } = useSelector(

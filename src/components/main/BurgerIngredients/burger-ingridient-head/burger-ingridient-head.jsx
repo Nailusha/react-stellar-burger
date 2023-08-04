@@ -7,7 +7,6 @@ import BurgerIngridient from "../burger-ingridient/burger-ingridient";
 import { ingridientPropType } from '../../../utils/prop-types';
 import { useSelector } from "react-redux";
 import { memoIngridientsSelector } from '../../../services/store/selector/memoIngridientSelector';
-import { ingridientPropType } from '../../../utils/prop-types';
 
 function BurgerIngridients({ productName, typeProduct }) {
   const ingridients = useSelector(memoIngridientsSelector);
