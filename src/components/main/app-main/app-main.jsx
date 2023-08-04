@@ -3,7 +3,8 @@ import styles from './app-main.module.css';
 
 import BurgerIngridientTab from "../BurgerIngredients/burger-ingridient-tab/burger-ingridient-tab";
 import BurgerConstructorAll from "../BurgerConstructor/burger-constructor-all/burger-constructor-all";
-import BurgerConstructor
+import BurgerConstructor from '../BurgerConstructor/burger-constructor';
+import BurgerIngridients from '../BurgerIngredients/burger-ingridient-head';
 
 import { useInView } from "react-intersection-observer";
 import { useDispatch, useSelector } from "react-redux";
