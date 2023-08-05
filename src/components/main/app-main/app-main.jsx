@@ -1,12 +1,12 @@
 import React from "react";
-import styles from './app-main.module.css';
+import styles from "./app-main.module.css";
 
 import BurgerIngridientTab from "../BurgerIngredients/burger-ingridient-tab/burger-ingridient-tab";
 import BurgerConstructorAll from "../BurgerConstructor/burger-constructor-all/burger-constructor-all";
-import BurgerConstructor from '../BurgerConstructor/burger-constructor';
-import BurgerIngridients from '../BurgerIngredients/burger-ingridient-head/burger-ingridient-head';
+import BurgerConstructor from "../BurgerConstructor/burger-constructor";
+import BurgerIngridients from "../BurgerIngredients/burger-ingridient-head/burger-ingridient-head";
 
-import { useInView } from "react-intersection-observer";
+import { useRef } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { changeTypeTab } from "../../services/store/reducers/ingridientsTab";
 
@@ -92,4 +92,4 @@ function AppMain() {
   );
 }
 
-  export default AppMain
+export default AppMain;

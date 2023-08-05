@@ -1,10 +1,10 @@
-import React from 'react';
-import styles from './ingridient-details.module.css'
+import React from "react";
+import styles from "./ingridient-details.module.css";
 import { string } from "prop-types";
 import { useSelector } from "react-redux";
 import { detailsSelector } from "../../services/store/selector/detailsSelector";
 
-import image from '../../../images/done.svg';
+import image from "../../../images/done.svg";
 
 function IngridientDetails() {
   const detailsIngridient = useSelector(detailsSelector);

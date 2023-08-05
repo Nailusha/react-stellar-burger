@@ -1,6 +1,4 @@
-import styles from "./app.module.css";
-import React, { useEffect } from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import AppHeader from "../header/app-header/app-header";
 import AppMain from "../main/app-main/app-main";
@@ -13,11 +11,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchIngridients } from "../services/store/reducers/ingridientQuery";
 import { ingridientSelector } from "../services/store/selector/ingridientSelector";
 
-
 const App = () => {
   const [isloding, setIsLoding] = useState(false);
   const ingridients = useSelector(ingridientSelector);
-  const { setClickOrderList, setIsOpen } = useSelector(
+  const [setClickOrderList, setIsOpen] = useSelector(
     (state) => state.ModalOverlay
   );
   const isClickStutusIngridient = useSelector(
@@ -58,6 +55,3 @@ const App = () => {
 };
 
 export default App;
-
-
-

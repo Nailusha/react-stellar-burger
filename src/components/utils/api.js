@@ -14,7 +14,7 @@ export function request(endpoint, options) {
 }
 
 // async нужен когда несколько await поэтому убрал от сюда + а далее передаю рес, но его убрал т.к в стрелочной функции рес передается один и тотже в функицию
-export const getIngridients = () => request(`/ingridients`);
+export const getIngridients = () => request(`/ingredients`);
 
 export const sendOrder = (dataId) => {
   return request(`/orders`, {

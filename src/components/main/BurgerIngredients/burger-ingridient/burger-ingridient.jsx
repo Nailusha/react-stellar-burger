@@ -1,17 +1,12 @@
 import React from "react";
 import styles from "./burger-ingridient.module.css";
-import {
-  Counter,
-  CurrencyIcon,
-} from "@ya.praktikum/react-developer-burger-ui-components";
+
+import { Counter, CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 import { useDispatch, useSelector } from "react-redux";
 import { clickOpen } from "../../../services/store/reducers/modalOverlaySlice";
-import {
-  addIngridDetails,
-  clickIngridient,
-  counter,
-} from "../../../services/store/reducers/ingridientDetails";
+import { addIngridDetails, clickIngridient, counter } from "../../../services/store/reducers/ingridientDetails";
 import { useDrag } from "react-dnd";
+import { useState } from 'react';
 
 function BurgerIngridient({ ingridient }) {
   const [elements, setElements] = useState(ingridient);
@@ -21,7 +16,7 @@ function BurgerIngridient({ ingridient }) {
   );
 
   const [, refDrag] = useDrag({
-    type: "ingredient",
+    type: "ingridient",
     item: ingridient,
   });
 
@@ -35,7 +30,6 @@ function BurgerIngridient({ ingridient }) {
 
   return (
     <div className={styles.card} ref={refDrag} draggable>
-
       {ingridient.count > 0 && (
         <Counter
           count={
