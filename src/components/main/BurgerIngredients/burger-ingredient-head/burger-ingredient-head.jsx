@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './burger-ingredient-head.module.css';
 
 import PropTypes from 'prop-types';
-import BurgerIngredient from "../burger-ingredient/burger-ingredient";
+import BurgerIngredient from "../burger-ingridient/burger-ingredient";
 
 import { ingredientPropType } from '../../../utils/prop-types';
 import { useSelector } from "react-redux";

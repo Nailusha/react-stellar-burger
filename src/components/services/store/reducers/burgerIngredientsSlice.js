@@ -10,6 +10,7 @@ const initialState = {
 const burgerIngredientsSlice = createSlice({
   name: "ingredients",
   initialState,
+  
 
   extraReducers: (builder) => {
     builder

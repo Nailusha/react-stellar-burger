@@ -14,9 +14,3 @@
 .main_constructorBlock {
   height: calc(100vh - 208px);
 }
-
-.main_constructorMidleBlock {
-  height: calc(100vh - 550px);
-  overflow-x: hidden;
-  overflow-y: scroll;
-}
