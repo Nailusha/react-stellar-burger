@@ -2,7 +2,7 @@
   import React, { memo } from "react";
   import { useDrag, useDrop } from "react-dnd";
   import { useDispatch, useSelector } from "react-redux";
-  import { moveIngridients } from "../../../services/store/reducers/burgerConstructorSlice";
+  import { moveIngredients } from "../../../services/store/reducers/burgerConstructorSlice";
   import styles from "./burger-constructor-card.module.css";
   
   export const BurgerConstructorCard = memo(function BurgerConstructorCard({
@@ -15,7 +15,7 @@
   }) {
     const { name, price, image_mobile, _id, _uuid } = data;
     const { draggedBun, draggedIngredients } = useSelector(
-      (state) => state.constIngridient
+      (state) => state.constIngredient
     );
   
     const dispatch = useDispatch();
@@ -27,7 +27,7 @@
     // часть с ингредиентами в конструкторе
     const [{ isDragging }, refDrag] = useDrag({
       type: "card",
-      item: { ingridient: data },
+      item: { ingredient: data },
       collect: (monitor) => ({
         isDragging: monitor.isDragging(),
       }),
@@ -35,14 +35,14 @@
   
     const [, dropRef] = useDrop({
       accept: "card",
-      hover({ ingridient }) {
-        if (ingridient._uuid === data._uuid) return;
+      hover({ ingredient }) {
+        if (ingredient._uuid === data._uuid) return;
   
         dispatch(
-          moveIngridients({
-            indexFrom: findIndex(ingridient),
+          moveIngredients({
+            indexFrom: findIndex(ingredient),
             indexTo: index,
-            ingridient: ingridient,
+            ingredient: ingredient,
           })
         );
       },

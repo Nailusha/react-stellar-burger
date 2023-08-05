@@ -4,26 +4,26 @@ import styles from "./burger-constructor.module.css";
 import { ConstructorElement } from "@ya.praktikum/react-developer-burger-ui-components";
 import { useDispatch, useSelector } from "react-redux";
 import { useDrag, useDrop } from "react-dnd";
-import { addBun, addIngridient, deliteIngridient, removeList } from "../../services/store/reducers/burgerConstructorSlice";
+import { addBun, addIngredient, deliteIngredient, removeList } from "../../services/store/reducers/burgerConstructorSlice";
 
 import { v4 as uuidv4 } from "uuid";
 import { BurgerConstructorCard } from "./burger-constructor-card/burger-constructor-card";
 
 const BurgerConstructor = memo(function BurgerConstructor({ data, index }) {
   const dispatch = useDispatch();
-  const { draggedBun, draggedIngridients } = useSelector(
-    (state) => state.constIngridient
+  const { draggedBun, draggedIngredients } = useSelector(
+    (state) => state.constIngredient
   );
-  const { selctIngridient, clickStutus, count } = useSelector(
-    (state) => state.ingridDetails
+  const { selctIngredient, clickStutus, count } = useSelector(
+    (state) => state.ingredDetails
   );
 
-  const { bun, ingridients, isLoding } = useSelector(
-    (state) => state.ingridients
+  const { bun, ingredients, isLoding } = useSelector(
+    (state) => state.ingredients
   );
 
   const [{ isDropped }, refDrop] = useDrop({
-    accept: "ingridient",
+    accept: "ingredient",
     drop(item) {
       const itemWithUuId = {
         ...item,
@@ -32,7 +32,7 @@ const BurgerConstructor = memo(function BurgerConstructor({ data, index }) {
       {
         item.type === "bun"
           ? dispatch(addBun(itemWithUuId))
-          : dispatch(addIngridient(itemWithUuId));
+          : dispatch(addIngredient(itemWithUuId));
       }
     },
     collect: (monitor) => ({
@@ -43,7 +43,7 @@ const BurgerConstructor = memo(function BurgerConstructor({ data, index }) {
   const [, drop] = useDrop(() => ({ accept: "card" }));
 
   const handleDeliteElement = useCallback((uuid) => {
-    dispatch(deliteIngridient(uuid));
+    dispatch(deliteIngredient(uuid));
   });
 
   return (
@@ -64,7 +64,7 @@ const BurgerConstructor = memo(function BurgerConstructor({ data, index }) {
       </div>
 
       <div className={styles.itemMidle + " custom-scroll pr-2"}>
-        {draggedIngridients
+        {draggedIngredients
           .filter((card) => card.type !== "bun")
           .map((card, index) => {
             return (

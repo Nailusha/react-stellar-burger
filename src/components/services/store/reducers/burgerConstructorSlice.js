@@ -6,7 +6,7 @@ const initialState = {
 };
 
 const burgerConstructorSlice = createSlice({
-  name: "constIngridient",
+  name: "constIngredient",
   initialState,
 
   reducers: {
@@ -14,27 +14,27 @@ const burgerConstructorSlice = createSlice({
       state.draggedBun = [action.payload];
     },
 
-    addIngridient: (state, action) => {
-      state.draggedIngridients = [...state.draggedIngridients, action.payload];
+    addIngredient: (state, action) => {
+      state.draggedIngredients = [...state.draggedIngredients, action.payload];
       console.log(action.payload);
     },
 
-    moveIngridients: (state, action) => {
-      const { indexFrom, indexTo, ingridient } = action.payload;
-      state.draggedIngridients.splice(indexFrom, 1);
-      state.draggedIngridients.splice(indexTo, 0, ingridient);
+    moveIngredients: (state, action) => {
+      const { indexFrom, indexTo, ingredient } = action.payload;
+      state.draggedIngredients.splice(indexFrom, 1);
+      state.draggedIngredients.splice(indexTo, 0, ingredient);
     },
 
-    deliteIngridient: (state, action) => {
-      state.draggedIngridients = [
-        ...state.draggedIngridients.filter(
+    deliteIngredient: (state, action) => {
+      state.draggedIngredients = [
+        ...state.draggedIngredients.filter(
           (item) => item._uuid !== action.payload
         ),
       ];
     },
 
     clearOrder: (state, action) => {
-      state.draggedIngridients = action.payload;
+      state.draggedIngredients = action.payload;
       state.draggedBun = action.payload;
     },
   },
@@ -42,9 +42,9 @@ const burgerConstructorSlice = createSlice({
 
 export const {
   addBun,
-  addIngridient,
-  deliteIngridient,
-  moveIngridients,
+  addIngredient,
+  deliteIngredient,
+  moveIngredients,
   clearOrder,
 } = burgerConstructorSlice.actions;
 export default burgerConstructorSlice.reducer;

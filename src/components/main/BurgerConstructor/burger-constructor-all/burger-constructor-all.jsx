@@ -8,8 +8,8 @@ import { setDetails } from "../../../services/store/reducers/detailsQuery";
 import { clearOrder } from "../../../services/store/reducers/burgerConstructorSlice";
 
 function BurgerConstructorAll({ name }) {
-  const { draggedBun, draggedIngridients } = useSelector(
-    (state) => state.constIngridient
+  const { draggedBun, draggedIngredients } = useSelector(
+    (state) => state.constIngredient
   );
 
   const dispatch = useDispatch();
@@ -17,7 +17,7 @@ function BurgerConstructorAll({ name }) {
   const onClick = () => {
     dispatch(clickDetails(true));
     dispatch(clickOpen(true));
-    dispatch(setDetails([...draggedBun, ...draggedIngridients]));
+    dispatch(setDetails([...draggedBun, ...draggedIngredients]));
     dispatch(clearOrder([]))
   };
 
@@ -25,7 +25,7 @@ function BurgerConstructorAll({ name }) {
     <div className={styles.constructorall + " pt-10"}>
       <div className={"pr-10"}>
         <span className="text_type_digits-medium">
-          {draggedIngridients.reduce(function (acc, data) {
+          {draggedIngredients.reduce(function (acc, data) {
             return acc + data.price;
           }, 0) +
             2 *
@@ -35,7 +35,7 @@ function BurgerConstructorAll({ name }) {
         </span>
         <CurrencyIcon />
       </div>
-      <Button disabled={[...draggedBun, ...draggedIngridients].length<=0} onClick={onClick} htmlType="submit" type="primary" size="large">
+      <Button disabled={[...draggedBun, ...draggedIngredients].length<=0} onClick={onClick} htmlType="submit" type="primary" size="large">
         {name}
       </Button>
     </div>

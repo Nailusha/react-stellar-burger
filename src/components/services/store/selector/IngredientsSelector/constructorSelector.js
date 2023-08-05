@@ -1,3 +1,3 @@
 export const constructorSelector = (store) => {
-    return store.constIngridient.draggedIngridients;
+    return store.constIngredient.draggedIngredients;
   };

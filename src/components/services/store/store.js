@@ -1,18 +1,18 @@
 import { configureStore } from "@reduxjs/toolkit";
-import ingridientsReducer from "./reducers/burgerIngridientsSlice";
+import ingredientsReducer from "./reducers/burgerIngredientsSlice";
 import constructorReducer from "./reducers/burgerConstructorSlice";
-import ingridDetailsReducer from "./reducers/ingridientDetails";
+import ingredDetailsReducer from "./reducers/ingredientDetails";
 import orderDetailsReducer from "./reducers/orderDetailsSlice";
 import modalOverlayReducer from "./reducers/modalOverlaySlice";
-import ingridientsTabReducer from "./reducers/ingridientsTab";
+import ingredientsTabReducer from "./reducers/ingredientsTab";
 
 export const store = configureStore({
   reducer: {
-    ingridients: ingridientsReducer,
-    constIngridient: constructorReducer,
-    ingridDetails: ingridDetailsReducer,
+    ingredients: ingredientsReducer,
+    constIngredient: constructorReducer,
+    ingredDetails: ingredDetailsReducer,
     orderDetails: orderDetailsReducer,
     modalOverlay: modalOverlayReducer,
-    ingridientsTab: ingridientsTabReducer,
+    ingredientsTab: ingredientsTabReducer,
   },
 });

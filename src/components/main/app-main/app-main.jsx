@@ -1,14 +1,14 @@
 import React from "react";
 import styles from "./app-main.module.css";
 
-import BurgerIngridientTab from "../BurgerIngredients/burger-ingridient-tab/burger-ingridient-tab";
+import BurgerIngredientTab from "../BurgerIngredients/burger-ingredient-tab/burger-ingredient-tab";
 import BurgerConstructorAll from "../BurgerConstructor/burger-constructor-all/burger-constructor-all";
 import BurgerConstructor from "../BurgerConstructor/burger-constructor";
-import BurgerIngridients from "../BurgerIngredients/burger-ingridient-head/burger-ingridient-head";
+import BurgerIngredients from "../BurgerIngredients/burger-ingredient-head/burger-ingredient-head";
 
 import { useRef } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { changeTypeTab } from "../../services/store/reducers/ingridientsTab";
+import { changeTypeTab } from "../../services/store/reducers/ingredientsTab";
 
 function AppMain() {
   const dispatch = useDispatch();
@@ -17,7 +17,7 @@ function AppMain() {
   const sauceRef = useRef(null);
   const mainRef = useRef(null);
 
-  const current = useSelector((state) => state.ingridientsTab.typeTab);
+  const current = useSelector((state) => state.ingredientsTab.typeTab);
 
   function handleTabClick(type) {
     dispatch(changeTypeTab(type));
@@ -63,7 +63,7 @@ function AppMain() {
   return (
     <main className={styles.main}>
       <section>
-        <BurgerIngridientTab
+        <BurgerIngredientTab
           current={current}
           handleTabClick={handleTabClick}
         />
@@ -73,13 +73,13 @@ function AppMain() {
           onScroll={handleTab}
         >
           <div ref={bunRef}>
-            <BurgerIngridients productName={"Булки"} typeProduct={"bun"} />
+            <BurgerIngredients productName={"Булки"} typeProduct={"bun"} />
           </div>
           <div ref={sauceRef}>
-            <BurgerIngridients productName={"Соусы"} typeProduct={"sauce"} />
+            <BurgerIngredients productName={"Соусы"} typeProduct={"sauce"} />
           </div>
           <div ref={mainRef}>
-            <BurgerIngridients productName={"Начинки"} typeProduct={"main"} />
+            <BurgerIngredients productName={"Начинки"} typeProduct={"main"} />
           </div>
         </div>
       </section>

@@ -4,23 +4,24 @@ import AppHeader from "../header/app-header/app-header";
 import AppMain from "../main/app-main/app-main";
 import Modal from "../modal/modal";
 import OrderDetails from "../modal/order-details/order-details";
-import IngridientDetails from "../modal/ingridient-details/ingridient-details";
+import IngredientDetails from "../modal/ingredient-details/ingredient-details";
 
 import Preloader from "../preloder/preloder";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchIngridients } from "../services/store/reducers/ingridientQuery";
-import { ingridientSelector } from "../services/store/selector/ingridientSelector";
+import { fetchIngredients } from "../services/store/reducers/ingredientQuery";
+import { ingredientSelector } from "../services/store/selector/ingredientSelector";
 
 const App = () => {
-  const [isloding, setIsLoding] = useState(false);
-  const ingridients = useSelector(ingridientSelector);
-  const [setClickOrderList, setIsOpen] = useSelector(
-    (state) => state.ModalOverlay
+  const [isLoading, setIsLoading] = useState(false); // Renamed to isLoading
+  const ingredients = useSelector(ingredientSelector);
+  const { setClickOrderList, setIsOpen } = useSelector(
+    (state) => state.modalOverlay
+  ); // Destructure properly
+
+  const isClickStatusIngredient = useSelector(
+    (state) => state.ingredDetails.clickStutus
   );
-  const isClickStutusIngridient = useSelector(
-    (state) => state.ingridDetails.clickStutus
-  );
-  const isClickStutusDetails = useSelector(
+  const isClickStatusDetails = useSelector(
     (state) => state.orderDetails.clickStutus
   );
 
@@ -29,19 +30,19 @@ const App = () => {
   const childForModal = () => {
     return (
       <Modal>
-        {(isClickStutusDetails && <OrderDetails />) ||
-          (isClickStutusIngridient && <IngridientDetails />)}
+        {isClickStatusDetails && <OrderDetails />}
+        {isClickStatusIngredient && <IngredientDetails />}
       </Modal>
     );
   };
 
   useEffect(() => {
-    dispatch(fetchIngridients());
+    dispatch(fetchIngredients());
   }, []);
 
-  if (ingridients.length < 1) return null;
+  if (ingredients.length < 1) return null;
 
-  if (isloding) {
+  if (isLoading) {
     return <Preloader />;
   }
 
