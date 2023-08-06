@@ -4,8 +4,7 @@
 
 .text_num {
   margin: 0;
-  text-shadow: 0 0 16px rgba(51, 51, 255, 0.25), 0 0 8px rgba(51, 51, 255, 0.25),
-    0 4px 32px rgba(51, 51, 255, 0.5);
+  text-shadow: 0 0 16px rgba(51, 51, 255, 0.25), 0 0 8px rgba(51, 51, 255, 0.25), 0 4px 32px rgba(51, 51, 255, 0.5);
 }
 
 .text_order {
@@ -20,13 +19,13 @@
   margin: 0;
 }
 
-.details {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 720px;
-  height: 718px;
-  box-sizing: border-box;
-  border: 2px solid var(--interface-accent, #4c4cff);
-  border-radius: var(--common-border-radius-s);
+.order_details {
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 720px;
+height: 718px;
+box-sizing: border-box;
+border: 2px solid var(--interface-accent, #4C4CFF);
+border-radius: var(--common-border-radius-s);
 }

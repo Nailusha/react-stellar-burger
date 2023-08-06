@@ -11,11 +11,11 @@ const ingredientDetailsSlice = createSlice({
   initialState,
 
   reducers: {
-    addIngridDetails: (state, action) => {
+    addIngredDetails: (state, action) => {
       state.selctIngredient = action.payload;
     },
 
-    clickIngridient: (state, action) => {
+    clickIngredient: (state, action) => {
       state.clickStutus = action.payload;
     },
 

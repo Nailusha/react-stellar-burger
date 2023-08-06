@@ -6,29 +6,28 @@ import { ListIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 import { Logo } from "@ya.praktikum/react-developer-burger-ui-components";
 import { ProfileIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 
-function HeaderList({ setClickOrderList, setIsOpen }) {
-  const onClick = () => {
-    setIsOpen(true);
-    setClickOrderList(true);
-  };
-
+function HeaderList() {
   return (
     <nav className={styles.header_menu}>
-      <ul className={styles.linkList_childItem}>
+      <ul className={styles.linkList}>
         <li className={styles.linkList_item}>
-          <a className={styles.header_link}>
-            <BurgerIcon type="primary" />
-            <p>Конструктор</p>
-          </a>
-        </li>
+          <ul className={styles.linkList_childItem}>
+            <li className={styles.linkList_item}>
+              <a className={styles.header_link}>
+                <BurgerIcon />
+                <span className="pl-2 text_type_main-default">Конструктор</span>
+              </a>
+            </li>
 
-        <li className={styles.linkList_item}>
-          <a className={styles.header_link}>
-            <ListIcon type="primary" />
-            <span className="pl-2 text_type_main-default" onClick={onClick}>
-              Лента заказов
-            </span>
-          </a>
+            <li className={styles.linkList_item}>
+              <a className={styles.header_link}>
+                <ListIcon />
+                <span className="pl-2 text_type_main-default">
+                  Лента Заказов
+                </span>
+              </a>
+            </li>
+          </ul>
         </li>
 
         <li className={styles.linkList_item}>
@@ -40,7 +39,7 @@ function HeaderList({ setClickOrderList, setIsOpen }) {
         <li className={styles.linkList_item}>
           <a className={styles.header_link}>
             <ProfileIcon type="primary" />
-            <p className="pl-2 text_type_main-default">Личный кабинет</p>
+            <span className="pl-2 text_type_main-default">Личный кабинет</span>
           </a>
         </li>
       </ul>
