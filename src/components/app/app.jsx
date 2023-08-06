@@ -8,8 +8,8 @@ import IngredientDetails from "../modal/ingredient-details/ingredient-details";
 
 import Preloader from "../preloder/preloder";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchIngredients } from "../services/store/reducers/ingredientQuery";
-import { ingredientSelector } from "../services/store/selector/ingredientSelector";
+import { fetchIngredients } from "../../services/store/reducers/ingredientQuery";
+import { ingredientSelector } from "../../services/store/selector/ingredientSelector";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(false); // Renamed to isLoading

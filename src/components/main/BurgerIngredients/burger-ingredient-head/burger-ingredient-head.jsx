@@ -4,9 +4,9 @@ import styles from './burger-ingredient-head.module.css';
 import PropTypes from 'prop-types';
 import BurgerIngredient from "../burger-ingridient/burger-ingredient";
 
-import { ingredientPropType } from '../../../utils/prop-types';
+import { ingredientPropType } from '../../../../utils/prop-types';
 import { useSelector } from "react-redux";
-import { memoIngredientsSelector } from '../../../services/store/selector/memoIngredientSelector';
+import { memoIngredientsSelector } from '../../../../services/store/selector/memoIngredientSelector';
 
 function BurgerIngredients({ productName, typeProduct }) {
   const ingredients = useSelector(memoIngredientsSelector);
@@ -26,10 +26,6 @@ function BurgerIngredients({ productName, typeProduct }) {
 }
 
 BurgerIngredients.propTypes = {
-  ingredients: PropTypes.arrayOf(ingredientPropType),
-  setIsOpen: PropTypes.func,
-  setClickIngredient: PropTypes.func,
-  setImageIngredient: PropTypes.func,
   productName: PropTypes.string,
   typeProduct: PropTypes.string,
 }

@@ -3,8 +3,8 @@ import styles from "./burger-ingredient.module.css";
 
 import { Counter, CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 import { useDispatch, useSelector } from "react-redux";
-import { clickOpen } from "../../../services/store/reducers/modalOverlaySlice";
-import { addIngredDetails, clickIngredient, counter } from "../../../services/store/reducers/ingredientDetails";
+import { clickOpen } from "../../../../services/store/reducers/modalOverlaySlice";
+import { addIngredDetails, clickIngredient, counter } from "../../../../services/store/reducers/ingredientDetails";
 import { useDrag } from "react-dnd";
 import { useState } from 'react';
 

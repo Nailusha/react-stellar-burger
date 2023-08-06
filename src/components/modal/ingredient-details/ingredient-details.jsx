@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./ingredient-details.module.css";
 import { string } from "prop-types";
 import { useSelector } from "react-redux";
-import { detailsSelector } from "../../services/store/selector/detailsSelector";
+import { detailsSelector } from "../../../services/store/selector/detailsSelector";
 
 import image from "../../../images/done.svg";
 

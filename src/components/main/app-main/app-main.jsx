@@ -8,7 +8,7 @@ import BurgerIngredients from "../BurgerIngredients/burger-ingredient-head/burge
 
 import { useRef } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { changeTypeTab } from "../../services/store/reducers/ingredientsTab";
+import { changeTypeTab } from "../../../services/store/reducers/ingredientsTab";
 
 function AppMain() {
   const dispatch = useDispatch();

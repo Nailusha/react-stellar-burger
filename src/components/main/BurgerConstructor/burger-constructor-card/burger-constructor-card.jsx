@@ -2,7 +2,7 @@
   import React, { memo } from "react";
   import { useDrag, useDrop } from "react-dnd";
   import { useDispatch, useSelector } from "react-redux";
-  import { moveIngredients } from "../../../services/store/reducers/burgerConstructorSlice";
+  import { moveIngredients } from "../../../../services/store/reducers/burgerConstructorSlice";
   import styles from "./burger-constructor-card.module.css";
   
   export const BurgerConstructorCard = memo(function BurgerConstructorCard({
