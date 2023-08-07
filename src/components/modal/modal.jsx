@@ -1,15 +1,17 @@
-import React from 'react';
-import styles from './modal.module.css';
-import ReactDom  from 'react-dom';
+import React from "react";
+import styles from "./modal.module.css";
+import ReactDom from "react-dom";
 
-import { CloseIcon } from '@ya.praktikum/react-developer-burger-ui-components';
+import { CloseIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 import ModalOverlay from "../modal-overlay/modal-overlay";
 import { useDispatch } from "react-redux";
-import { clickOpen, clickOrderList } from "../../services/store/reducers/modalOverlaySlice";
+import {
+  clickOpen,
+  clickOrderList,
+} from "../../services/store/reducers/modalOverlaySlice";
 import { clickDetails } from "../../services/store/reducers/orderDetailsSlice";
 
-
-const modalRoot = document.getElementById('react-modal')
+const modalRoot = document.getElementById("react-modal");
 
 function Modal({ children }) {
   const closeModal = () => {

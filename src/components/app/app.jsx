@@ -12,16 +12,15 @@ import { fetchIngredients } from "../../services/store/reducers/ingredientQuery"
 import { ingredientSelector } from "../../services/store/selector/ingredientSelector";
 
 const App = () => {
-  const [isLoading, setIsLoading] = useState(false); // Renamed to isLoading
+  const [isloding, setIsLoding] = useState(false);
   const ingredients = useSelector(ingredientSelector);
   const { setClickOrderList, setIsOpen } = useSelector(
     (state) => state.modalOverlay
-  ); // Destructure properly
-
-  const isClickStatusIngredient = useSelector(
+  );
+  const isClickStutusIngredient = useSelector(
     (state) => state.ingredDetails.clickStutus
   );
-  const isClickStatusDetails = useSelector(
+  const isClickStutusDetails = useSelector(
     (state) => state.orderDetails.clickStutus
   );
 
@@ -30,8 +29,8 @@ const App = () => {
   const childForModal = () => {
     return (
       <Modal>
-        {isClickStatusDetails && <OrderDetails />}
-        {isClickStatusIngredient && <IngredientDetails />}
+        {(isClickStutusDetails && <OrderDetails />) ||
+          (isClickStutusIngredient && <IngredientDetails />)}
       </Modal>
     );
   };
@@ -42,7 +41,7 @@ const App = () => {
 
   if (ingredients.length < 1) return null;
 
-  if (isLoading) {
+  if (isloding) {
     return <Preloader />;
   }
 

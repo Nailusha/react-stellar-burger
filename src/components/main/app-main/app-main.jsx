@@ -6,7 +6,7 @@ import BurgerConstructorAll from "../BurgerConstructor/burger-constructor-all/bu
 import BurgerConstructor from "../BurgerConstructor/burger-constructor";
 import BurgerIngredients from "../BurgerIngredients/burger-ingredient-head/burger-ingredient-head";
 
-import { useRef } from 'react';
+import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changeTypeTab } from "../../../services/store/reducers/ingredientsTab";
 

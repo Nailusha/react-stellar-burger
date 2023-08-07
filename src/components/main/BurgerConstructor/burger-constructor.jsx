@@ -4,7 +4,12 @@ import styles from "./burger-constructor.module.css";
 import { ConstructorElement } from "@ya.praktikum/react-developer-burger-ui-components";
 import { useDispatch, useSelector } from "react-redux";
 import { useDrag, useDrop } from "react-dnd";
-import { addBun, addIngredient, deliteIngredient, removeList } from "../../../services/store/reducers/burgerConstructorSlice";
+import {
+  addBun,
+  addIngredient,
+  deliteIngredient,
+  removeList,
+} from "../../../services/store/reducers/burgerConstructorSlice";
 
 import { v4 as uuidv4 } from "uuid";
 import { BurgerConstructorCard } from "./burger-constructor-card/burger-constructor-card";

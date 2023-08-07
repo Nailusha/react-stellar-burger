@@ -1,15 +1,14 @@
-import React from 'react';
-import styles from './app-header.module.css';
+import React from "react";
+import styles from "./app-header.module.css";
 
-import HeaderList from '../header-list/header-list';
+import HeaderList from "../header-list/header-list";
 
 function AppHeader() {
-
-    return (
-        <header className={styles.header}>
-            <HeaderList />
-        </header>
-    )
+  return (
+    <header className={styles.header}>
+      <HeaderList />
+    </header>
+  );
 }
 
-export default AppHeader
+export default AppHeader;
