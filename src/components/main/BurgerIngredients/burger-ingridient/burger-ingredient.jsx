@@ -8,6 +8,8 @@ import { addIngredDetails, clickIngredient, counter } from "../../../../services
 import { useDrag } from "react-dnd";
 import { useState } from 'react';
 
+import { Navigate, useNavigate } from "react-router-dom";
+
 function BurgerIngredient({ ingredient }) {
   const [elements, setElements] = useState(ingredient);
   const [draggedElements, setDraggedElements] = useState([]);
@@ -22,10 +24,11 @@ function BurgerIngredient({ ingredient }) {
 
   const dispatch = useDispatch();
 
+
   const onClick = () => {
     dispatch(clickIngredient(true));
     dispatch(addIngredDetails(ingredient));
-    dispatch(clickOpen(true));
+    dispatch(clickOpen(true))
   };
 
   return (
@@ -37,7 +40,6 @@ function BurgerIngredient({ ingredient }) {
           }
         />
       )}
-
       <img className={styles.image} src={ingredient.image} onClick={onClick} />
       <span className={"text_type_main-default pt-1 " + styles.price}>
         {ingredient.price}

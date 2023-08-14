@@ -1,6 +1,6 @@
 import React from "react";
-import stylesSingle from "./ingredients-details.module.css";
-import stylesModal from "./ingredients-details.module.css";
+import stylesSingle from "../ingredients-details/ingredients-detail.module.css";
+import stylesModal from "../ingredients-details/ingredients-details.module.css";
 import image from "../../../../src/images/done.svg";
 import { string } from "prop-types";
 import { useSelector } from "react-redux";

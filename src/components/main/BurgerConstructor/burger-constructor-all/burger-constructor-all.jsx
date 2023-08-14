@@ -1,5 +1,6 @@
 import React, { useCallback, useMemo } from "react";
 import styles from "./burger-constructor-all.module.css";
+
 import { Button, CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 import { useDispatch, useSelector } from "react-redux";
 import { clickOpen, clickOrderList } from "../../../../services/store/reducers/modalOverlaySlice";
@@ -12,6 +13,8 @@ function BurgerConstructorAll({ name }) {
     (state) => state.constIngredient
   );
 
+  const isDisabled = useSelector((store) => store.userStatus.user)
+
   const dispatch = useDispatch();
 
   const onClick = () => {
@@ -22,7 +25,7 @@ function BurgerConstructorAll({ name }) {
   };
 
   return (
-    <div className={styles.constructorall + " pt-10"}>
+    <div className={styles.constructorTotal + " pt-10"}>
       <div className={"pr-10"}>
         <span className="text_type_digits-medium">
           {draggedIngredients.reduce(function (acc, data) {
@@ -35,7 +38,7 @@ function BurgerConstructorAll({ name }) {
         </span>
         <CurrencyIcon />
       </div>
-      <Button disabled={[...draggedBun, ...draggedIngredients].length<=0} onClick={onClick} htmlType="submit" type="primary" size="large">
+      <Button disabled={([...draggedBun, ...draggedIngredients].length<=0) || !isDisabled} onClick={onClick} htmlType="submit" type="primary" size="large">
         {name}
       </Button>
     </div>

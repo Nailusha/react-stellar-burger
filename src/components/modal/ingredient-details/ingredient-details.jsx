@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./ingredient-details.module.css";
+import image from "../../../../src/images/done.svg";
+
 import { string } from "prop-types";
 import { useSelector } from "react-redux";
-import { detailsSelector } from "../../../services/store/selector/detailsSelector";
-
-import image from "../../../images/done.svg";
+import { detailsSelector } from "../../../services/store/selectors/detailsSelector";
 
 function IngredientDetails() {
   const detailsIngredient = useSelector(detailsSelector);
