@@ -1,13 +1,11 @@
 import React from "react";
 import styles from "./ingredient-details.module.css";
-import image from "../../../../src/images/done.svg";
 
-import { string } from "prop-types";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "react-redux";
 import { detailsSelector } from "../../../services/store/selectors/detailsSelector";
 
 function IngredientDetails() {
-  const detailsIngredient = useSelector(detailsSelector);
+  const detailsIngredient = useAppSelector(detailsSelector);
   return (
     <div className={styles.ingredientDetails + " pt-30"}>
       <p

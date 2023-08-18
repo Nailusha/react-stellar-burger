@@ -1,0 +1,44 @@
+import React from 'react';
+import styles from './burger-ingredient-tab.module.css';
+import { Tab } from '@ya.praktikum/react-developer-burger-ui-components';
+import PropTypes from "prop-types";
+import { TburgerIngingredients } from "../../../../utils/types";
+
+function BurgerIngingredientTab({ current, handleTabClick }: TburgerIngingredients) {
+  return (
+    <>
+      <h1
+        className={styles.main_title + " text_type_main-large" + " pt-10 pb-5"}
+      >
+        Соберите бургер
+      </h1>
+      <div className={styles.container + " pb-10"}>
+        <Tab
+          value="bun"
+          active={current === "bun"}
+          onClick={(e: string) => handleTabClick(e)}
+        >
+          Булки
+        </Tab>
+        <Tab
+          value="sauce"
+          active={current === "sauce"}
+          onClick={(e: string) => handleTabClick(e)}
+        >
+          Соусы
+        </Tab>
+        <Tab
+          value="main"
+          active={current === "main"}
+          onClick={(e: string) => handleTabClick(e)}
+        >
+          Начинки
+        </Tab>
+      </div>
+    </>
+  );
+}
+
+
+
+export default BurgerIngingredientTab;
