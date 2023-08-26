@@ -31,7 +31,6 @@ const BurgerConstructor = memo(function BurgerConstructor() {
           ? dispatch(addBun(itemWithUuId))
           : dispatch(addIngredient(itemWithUuId));
       }
-      console.log(item);
     },
     collect: (monitor) => ({
       isDropped: monitor.isOver(),

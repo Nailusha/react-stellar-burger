@@ -1,9 +1,7 @@
 import React from "react";
 import styles from "./burger-ingredient-head.module.css";
-
 import BurgerIngredient from "../burger-ingridient/burger-ingredient";
 import PropTypes from "prop-types";
-
 import { ingredientPropType } from "../../../../utils/prop-types";
 import { memoIngredientsSelector } from "../../../../services/store/selector/memoIngredientSelector";
 import { Link, useLocation } from "react-router-dom";
@@ -21,7 +19,7 @@ function BurgerIngredients({ productName, typeProduct }: TWithChildren<Tingredie
         {ingredients
           .filter((item: TingredintsConstructor) => item.type === typeProduct)
           .map((item: TingredintsConstructor) => {
-            return <Link className={styles.link} key={item._id} to={`profile/orders/${item._id}`} state={{ background: location }}> <BurgerIngredient key={item._id} ingredient={item}/> </Link>;
+            return <Link className={styles.link} key={item._id} to={`ingredients/${item._id}`} state={{ background: location }}> <BurgerIngredient key={item._id} ingredient={item}/> </Link>;
           })}
       </div>
     </>

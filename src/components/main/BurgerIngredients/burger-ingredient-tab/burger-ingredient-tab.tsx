@@ -1,10 +1,9 @@
-import React from 'react';
-import styles from './burger-ingredient-tab.module.css';
-import { Tab } from '@ya.praktikum/react-developer-burger-ui-components';
+import { Tab } from "@ya.praktikum/react-developer-burger-ui-components";
+import styles from "./burger-ingredient-tab.module.css";
 import PropTypes from "prop-types";
 import { TburgerIngingredients } from "../../../../utils/types";
 
-function BurgerIngingredientTab({ current, handleTabClick }: TburgerIngingredients) {
+function BurgerIngingredientsTab({ current, handleTabClick }: TburgerIngingredients) {
   return (
     <>
       <h1
@@ -41,4 +40,4 @@ function BurgerIngingredientTab({ current, handleTabClick }: TburgerIngingredien
 
 
 
-export default BurgerIngingredientTab;
+export default BurgerIngingredientsTab;

@@ -1,8 +1,7 @@
-import React from "react";
 import styles from "./ingredient-details.module.css";
 
-import { useAppSelector } from "react-redux";
-import { detailsSelector } from "../../../services/store/selectors/detailsSelector";
+import { detailsSelector } from "../../../services/store/selector/detailsSelector";
+import { useAppSelector } from "../../../services/hooks/hooks";
 
 function IngredientDetails() {
   const detailsIngredient = useAppSelector(detailsSelector);
