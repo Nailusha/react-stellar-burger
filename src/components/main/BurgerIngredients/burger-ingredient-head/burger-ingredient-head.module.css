@@ -1,4 +1,4 @@
-.burgerIngredient {
+.burgerIngredientBlock {
   display: grid;
   grid-template-columns: min-content min-content;
   column-gap: 24px;
