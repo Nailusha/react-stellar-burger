@@ -1,14 +1,13 @@
 import { useAppSelector } from "../../services/hooks/hooks";
 import { memoIngredientsSelector } from "../../services/store/selector/memoIngredientSelector";
 import { TingredintsConstructor } from "../../utils/types";
+
 import stylesSingle from "./ingredients-detail.module.css";
 import stylesModal from "./ingredients-details.module.css";
 import { useParams } from "react-router-dom";
 
-function IngredientsDetails({ isSinglePage = true }) {
+function IngredientDetails({ isSinglePage = true }) {
   const { id: _id } = useParams();
-
-  console.log(useParams());
 
   const ingredientsData = useAppSelector(memoIngredientsSelector);
 
@@ -207,4 +206,4 @@ function IngredientsDetails({ isSinglePage = true }) {
   );
 }
 
-export default IngredientsDetails;
+export default IngredientDetails;

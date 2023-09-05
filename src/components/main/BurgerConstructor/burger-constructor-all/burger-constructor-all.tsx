@@ -1,12 +1,6 @@
 import styles from "./burger-constructor-all.module.css";
-import {
-  Button,
-  CurrencyIcon,
-} from "@ya.praktikum/react-developer-burger-ui-components";
-import {
-  useAppDispatch,
-  useAppSelector,
-} from "../../../../services/hooks/hooks";
+import { Button, CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
+import { useAppDispatch, useAppSelector } from "../../../../services/hooks/hooks";
 import { clickOpen } from "../../../../services/store/reducers/modalOverlaySlice";
 import { clickDetails } from "../../../../services/store/reducers/orderDetailsSlice";
 import { clearOrder } from "../../../../services/store/reducers/burgerConstructorSlice";

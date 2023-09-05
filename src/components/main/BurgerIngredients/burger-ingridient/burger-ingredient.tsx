@@ -1,23 +1,11 @@
 import styles from "./burger-ingredient.module.css";
-import {
-  Counter,
-  CurrencyIcon,
-} from "@ya.praktikum/react-developer-burger-ui-components";
-import {
-  useAppDispatch,
-  useAppSelector,
-} from "../../../../services/hooks/hooks";
-import { clickOpen } from "../../../../services/store/reducers/modalOverlaySlice";
-import {
-  addIngredDetails,
-  clickIngredient,
-  counter,
-} from "../../../../services/store/reducers/ingredientDetails";
 import { useDrag } from "react-dnd";
-import {
-  TConstructorCard,
-  TingredintsConstructor,
-} from "../../../../utils/types";
+
+import { Counter, CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
+import { useAppDispatch, useAppSelector } from "../../../../services/hooks/hooks";
+import { clickOpen } from "../../../../services/store/reducers/modalOverlaySlice";
+import { addIngredDetails, clickIngredient, counter } from "../../../../services/store/reducers/ingredientDetails";
+import { TConstructorCard, TingredintsConstructor } from "../../../../utils/types";
 
 type Tingredient = {
   ingredient: TingredintsConstructor;

@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./burger-ingredient-head.module.css";
 import BurgerIngredient from "../burger-ingridient/burger-ingredient";
 import PropTypes from "prop-types";
+
 import { ingredientPropType } from "../../../../utils/prop-types";
 import { memoIngredientsSelector } from "../../../../services/store/selector/memoIngredientSelector";
 import { Link, useLocation } from "react-router-dom";

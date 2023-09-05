@@ -1,12 +1,12 @@
 import React, { SyntheticEvent } from "react";
 import styles from "./app-main.module.css";
+import { useRef } from "react";
 
 import BurgerIngredientTab from "../BurgerIngredients/burger-ingredient-tab/burger-ingredient-tab";
 import BurgerConstructorAll from "../BurgerConstructor/burger-constructor-all/burger-constructor-all";
 import BurgerConstructor from "../BurgerConstructor/burger-constructor";
 import BurgerIngredients from "../BurgerIngredients/burger-ingredient-head/burger-ingredient-head";
 
-import { useRef } from "react";
 import { changeTypeTab } from "../../../services/store/reducers/ingredientsTab";
 import { useAppDispatch, useAppSelector } from "../../../services/hooks/hooks";
 

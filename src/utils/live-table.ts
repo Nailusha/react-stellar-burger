@@ -17,6 +17,9 @@ export enum IOrderStatus {
     created = 'created',
 }
   
+
+
+
 export type TFeedOrder = {
     _id: string;
     ingredients: string[];
@@ -38,6 +41,11 @@ export type TWsData = {
     wsMessage: null | TWSMessage;
     wsConnected: boolean;
   }
+
+
+
+
+
 
 export enum LiveTableActionType {
     DATA = 'data',

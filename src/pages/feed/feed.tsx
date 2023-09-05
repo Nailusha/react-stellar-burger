@@ -7,7 +7,7 @@ import styles from "./feed.module.css";
 import { ORDERS_ALL } from "../../utils/api";
 import { useAppDispatch, useAppSelector } from "../../services/hooks/hooks";
 import { connect, wsClose, wsConnecting, wsMessage } from "../../services/store/reducers/socket/actions";
-import { allOrdersInf } from "../../services/store/selector/allOrders/allOrders"
+import { allOrdersInf } from "../../services/store/selector/allOrders/allOrders";
 import { ingredientSelector } from "../../services/store/selector/ingredientSelector";
 import { FormattedDate } from "@ya.praktikum/react-developer-burger-ui-components";
 import { useLocation } from "react-router-dom";
@@ -37,37 +37,6 @@ export default function Feed() {
     }
     return totalPrice;
   }
-
-  /*
-  console.log(ordersData);
-  const newData = [];
-  if (ordersData) {
-    ordersData.forEach((itemAll) => {
-      itemAll.ingredients.forEach((ingrAll) => {
-        ingredientsData.forEach((itemData) => {
-          if (itemData._id === ingrAll) {
-            const p = itemData.price;
-            const newItemAll = {
-              ...itemAll,
-              price: p + itemData.price
-            };
-            newData.push(newItemAll);
-          }
-        });
-      })
-    });
-  }
-  */
-  /*
-    const newData = [];
-  ordersData&&ordersData.forEach((itemAll) => ingredients.forEach((ingr) => {
-    if (itemAll._id === ingr._id) {
-      itemAll.price = ingr.price;
-      newData.push(itemAll);
-    }
-  }));
-  console.log(newData)
-  */
 
   useEffect(() => {
     dispatch(connect(ORDERS_ALL));

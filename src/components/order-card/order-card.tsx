@@ -1,11 +1,9 @@
-import { Link } from "react-router-dom";
-import { OrderList } from "../order-icon/order-icon";
-import styles from "./order-card.module.css";
-import {
-  CurrencyIcon,
-  FormattedDate,
-} from "@ya.praktikum/react-developer-burger-ui-components";
 import React from "react";
+import styles from "./order-card.module.css"
+import { Link } from "react-router-dom";
+
+import { OrderList } from "../order-icon/order-icon";
+import { CurrencyIcon, FormattedDate } from "@ya.praktikum/react-developer-burger-ui-components";
 import { Torder } from "../../utils/types";
 
 export function OrderCard({ ordersData, price }:{ ordersData:Torder, price: number }) {

@@ -19,8 +19,6 @@ export const Register = () => {
       ...userData,
       [e.target.name]: e.target.value,
     });
-
-    console.log(userData);
   };
 
   const onSubmit = (evt: React.FormEvent<HTMLFormElement>) => {

@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./order-details.module.css";
 import image from "../../../../src/images/done.svg";
 import { useSelector } from "react-redux";
+
 import { sendOrder } from "../../../utils/api";
 import Preloader from "../../preloder/preloder";
 
@@ -38,4 +39,3 @@ function OrderDetails() {
 }
 
 export default OrderDetails;
-

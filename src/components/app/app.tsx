@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 
 
+
 import Modal from "../modal/modal";
 import OrderDetails from "../modal/order-details/order-details";
 import Preloader from "../preloder/preloder";
@@ -9,7 +10,7 @@ import Layout from "../../pages/layout/layout";
 import ResetPassword from "../../pages/reset-password/reset-password";
 import Profile from "../../pages/profile/profile";
 import OrdersPage from "../../pages/orders/orders";
-import IngredientDetailsSingle from "../../pages/ingredients-details/ingredients-details";
+import IngredientDetails from "../../pages/ingredients-details/ingredients-details";
 import NotFound from "../../pages/not-found/not-found";
 import ForgotPassword from "../../pages/forgot-password/forgot-password";
 import AppMain from "../main/app-main/app-main";
@@ -114,7 +115,7 @@ const App = () => {
             element={
               <Modal isLink>
                 {" "}
-                <IngredientDetailsSingle isSinglePage={false} />
+                <IngredientDetails isSinglePage={false} />
               </Modal>
             }
           />
@@ -144,4 +145,3 @@ const App = () => {
 };
 
 export default App;
-
