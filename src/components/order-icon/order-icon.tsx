@@ -8,6 +8,11 @@ interface Props {
 }
 
 export const OrderList: FC<Props> = ({ ingredients, shift = true }) => {
+  if (!ingredients) {
+    // Обработка случая, когда ingredients не определено или равно null
+    return null; // или другая логика по умолчанию
+  }
+  
   const uniqueIngredients = ingredients.filter(
     (item: string, index: number) => {
       return ingredients.indexOf(item) === index;
