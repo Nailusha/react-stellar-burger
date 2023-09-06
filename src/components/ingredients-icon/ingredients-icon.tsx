@@ -3,7 +3,6 @@ import styles from "./ingredients-icon.module.css";
 
 import { useAppSelector } from "../../services/hooks/hooks";
 import { ingredientSelector } from "../../services/store/selector/ingredientSelector";
-import { Torder } from "../../utils/types";
 
 interface Props {
   ingredient: string;
@@ -22,7 +21,7 @@ export const IngredientsIcon: FC<Props> = ({
 }) => {
   const ingredients = useAppSelector(ingredientSelector);
   const { image_mobile, name, price } = ingredients.filter(
-    (item: Torder) => item._id === ingredient
+    (item: any) => item._id === ingredient
   )[0];
 
   const style = shift

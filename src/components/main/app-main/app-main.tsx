@@ -1,11 +1,11 @@
 import React, { SyntheticEvent } from "react";
-import styles from "./app-main.module.css";
 import { useRef } from "react";
+import styles from "./app-main.module.css";
 
-import BurgerIngredientTab from "../BurgerIngredients/burger-ingredient-tab/burger-ingredient-tab";
+import BurgerIngingredientsTab from "../BurgerIngredients/burger-ingredient-tab/burger-ingredient-tab";
+import BurgerIngredients from "../BurgerIngredients/burger-ingridient/burger-ingredient";
 import BurgerConstructorAll from "../BurgerConstructor/burger-constructor-all/burger-constructor-all";
 import BurgerConstructor from "../BurgerConstructor/burger-constructor";
-import BurgerIngredients from "../BurgerIngredients/burger-ingredient-head/burger-ingredient-head";
 
 import { changeTypeTab } from "../../../services/store/reducers/ingredientsTab";
 import { useAppDispatch, useAppSelector } from "../../../services/hooks/hooks";
@@ -17,7 +17,7 @@ function AppMain() {
   const sauceRef = useRef<HTMLHeadingElement>(null);
   const mainRef = useRef<HTMLHeadingElement>(null);
 
-  const current = useAppSelector((state: any) => state.ingredientsTab.typeTab);
+  const current = useAppSelector((state) => state.ingredientsTab.typeTab);
 
   function handleTabClick(type: string) {
     dispatch(changeTypeTab(type));
@@ -75,7 +75,7 @@ function AppMain() {
   return (
     <main className={styles.main}>
       <section>
-        <BurgerIngredientTab
+        <BurgerIngingredientsTab
           current={current}
           handleTabClick={handleTabClick}
         />

@@ -1,18 +1,22 @@
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 import { OrderStats } from "../../components/order-stats/order-stats";
 import { OrderCard } from "../../components/order-card/order-card";
 import { OrderList } from "../../components/order-icon/order-icon";
-import styles from "./feed.module.css";
 
+import styles from "./feed.module.css";
 import { ORDERS_ALL } from "../../utils/api";
 import { useAppDispatch, useAppSelector } from "../../services/hooks/hooks";
 import { connect, wsClose, wsConnecting, wsMessage } from "../../services/store/reducers/socket/actions";
 import { allOrdersInf } from "../../services/store/selector/allOrders/allOrders";
 import { ingredientSelector } from "../../services/store/selector/ingredientSelector";
 import { FormattedDate } from "@ya.praktikum/react-developer-burger-ui-components";
-import { useLocation } from "react-router-dom";
-import { Link } from "react-router-dom";
+
+
 import { TingredintsConstructor, Torder } from "../../utils/types";
+import { TFeedOrder } from "../../utils/live-table";
 
 export default function Feed() {
   const dispatch = useAppDispatch();
@@ -21,7 +25,7 @@ export default function Feed() {
   const ingredientsData = useAppSelector(ingredientSelector);
   const location = useLocation();
 
-  function price(item: Torder) {
+  function price(item:TFeedOrder) {
     let totalPrice = 0;
     if (item) {
       item.ingredients.forEach((ingrAll) => {
@@ -38,6 +42,8 @@ export default function Feed() {
     return totalPrice;
   }
 
+
+
   useEffect(() => {
     dispatch(connect(ORDERS_ALL));
 
@@ -53,7 +59,7 @@ export default function Feed() {
           Лента заказов
         </h1>
         <section className={`${styles.orders} custom-scroll pr-2`}>
-          {ordersData.map((item: Torder) => {
+          {ordersData.map((item) => {
             return (
               <Link
                 className={styles.link}
@@ -71,7 +77,7 @@ export default function Feed() {
           })}
         </section>
         <div className={styles.stats}>
-          <OrderStats ordersInf={ordersInf} />
+          <OrderStats ordersInf={ordersInf} number={""} _id={""} status={""} />
         </div>
       </div>
     )

@@ -1,6 +1,5 @@
 import { useAppSelector } from "../../services/hooks/hooks";
 import { memoIngredientsSelector } from "../../services/store/selector/memoIngredientSelector";
-import { TingredintsConstructor } from "../../utils/types";
 
 import stylesSingle from "./ingredients-detail.module.css";
 import stylesModal from "./ingredients-details.module.css";
@@ -12,8 +11,10 @@ function IngredientDetails({ isSinglePage = true }) {
   const ingredientsData = useAppSelector(memoIngredientsSelector);
 
   const detailsIngredient = ingredientsData.find(
-    (ingredient: TingredintsConstructor) => ingredient._id === _id
+    (ingredient) => ingredient._id === _id
   );
+
+  if (!detailsIngredient) return null
 
   return (
     <div>

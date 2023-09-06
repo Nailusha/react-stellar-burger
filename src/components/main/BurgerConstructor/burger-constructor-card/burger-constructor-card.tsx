@@ -1,8 +1,8 @@
-import { ConstructorElement, DragIcon } from "@ya.praktikum/react-developer-burger-ui-components";
+import {ConstructorElement,DragIcon,} from "@ya.praktikum/react-developer-burger-ui-components";
 import React, { memo } from "react";
+import { useDrag, useDrop } from "react-dnd";
 import styles from "./burger-constructor-card.module.css";
 
-import { useDrag, useDrop } from "react-dnd";
 import { moveIngredients } from "../../../../services/store/reducers/burgerConstructorSlice";
 import { TConstructorCard, TDragItem, TIsDragging, TWithChildren, TingredintsConstructor } from "../../../../utils/types";
 import { useAppDispatch, useAppSelector } from "../../../../services/hooks/hooks";
@@ -14,7 +14,7 @@ export const BurgerConstructorCard = memo(function BurgerConstructorCard({
 }: TWithChildren<TConstructorCard>) {
   const { name, price, image_mobile, _id, _uuid } = data;
   const { draggedBun, draggedIngredients } = useAppSelector(
-    (state: any) => state.constIngredient
+    (state) => state.constIngredient
   );
 
   const dispatch = useAppDispatch();

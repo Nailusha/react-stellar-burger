@@ -1,6 +1,6 @@
 import { FC, useEffect, useMemo } from "react";
-import styles from "./orders.module.css";
 import { Link, useLocation } from "react-router-dom";
+import styles from "./orders.module.css";
 
 import { OrderCard } from "../../components/order-card/order-card";
 import { useAppDispatch, useAppSelector } from "../../services/hooks/hooks";

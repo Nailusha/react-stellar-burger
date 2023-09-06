@@ -11,6 +11,7 @@ import { connect, wsClose } from "../../services/store/reducers/socket/actions";
 import { ORDERS_ALL, fetchOrder } from "../../utils/api";
 import { TingredientType } from "../../utils/types";
 import { detailsSelector } from "../../services/store/selector/detailsSelector";
+import { TFeedOrder } from "../../utils/live-table";
 
 export const OrderPage = ({ modal = false }) => {
   const dispatch = useAppDispatch();
@@ -22,11 +23,11 @@ export const OrderPage = ({ modal = false }) => {
   const orderIngredients = orderData&&orderData.ingredients;
   const order = orderData && orderData;
 
-  function price(item: { ingredients: any[] }) {
+  function price(item: TFeedOrder) {
     let totalPrice = 0;
-    if (item && item.ingredients) {
-      item.ingredients.forEach((ingrAll: any) => {
-        ingredientsData.forEach((itemData: { _id: any; type: string; price: number }) => {
+    if (item) {
+      item.ingredients.forEach((ingrAll) => {
+        ingredientsData.forEach((itemData: { _id: string; type: string; price: number; }) => {
           if (itemData._id === ingrAll) {
             totalPrice +=
               itemData.type === "bun" ? itemData.price * 2 : itemData.price;
@@ -50,6 +51,7 @@ export const OrderPage = ({ modal = false }) => {
 
   const done = order && order.status === "done";
   
+
   return (
     orderData &&
     <section className={`${styles.container} mt-15 mb-10 mr-10 ml-10`}>

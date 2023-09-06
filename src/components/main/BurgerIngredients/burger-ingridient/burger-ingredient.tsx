@@ -11,7 +11,7 @@ type Tingredient = {
   ingredient: TingredintsConstructor;
 };
 
-function BurgerIngredient({ ingredient }: Tingredient) {
+function IngredientCard({ ingredient }: Tingredient) {
   const [, refDrag] = useDrag({
     type: "ingredient",
     item: ingredient,
@@ -27,7 +27,7 @@ function BurgerIngredient({ ingredient }: Tingredient) {
 
   return (
     ingredient && (
-      <div className={styles.card} ref={refDrag} draggable>
+      <div className={styles.card} ref={refDrag} draggable data-test_id={ingredient._id}>
         {ingredient.count > 0 && (
           <Counter
             count={
@@ -54,4 +54,4 @@ function BurgerIngredient({ ingredient }: Tingredient) {
   );
 }
 
-export default BurgerIngredient;
+export default IngredientCard;
