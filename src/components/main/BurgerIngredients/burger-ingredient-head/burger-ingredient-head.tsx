@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./burger-ingredients.module.css";
+import styles from "./burger-ingredient-head.module.css";
 import { Link, useLocation } from "react-router-dom";
 
 import BurgerIngredient from "../burger-ingridient/burger-ingredient";

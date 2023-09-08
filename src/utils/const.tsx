@@ -33,6 +33,6 @@ const dataIngredients = [
   ];
   
   
-  export const dataUser = { user: { email: "", name: "Наиля" } }
+  export const dataUser = { user: { email: "yakimovanailusha@yandex.ru", name: "Наиля" } }
   
   

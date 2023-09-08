@@ -6,12 +6,13 @@ import stylesModal from "./ingredients-details.module.css";
 import { useParams } from "react-router-dom";
 
 function IngredientDetails({ isSinglePage = true }) {
+
   const { id: _id } = useParams();
 
   const ingredientsData = useAppSelector(memoIngredientsSelector);
 
   const detailsIngredient = ingredientsData.find(
-    (ingredient) => ingredient._id === _id
+    (ingredient: any) => ingredient._id === _id
   );
 
   if (!detailsIngredient) return null
@@ -206,5 +207,6 @@ function IngredientDetails({ isSinglePage = true }) {
     </div>
   );
 }
+
 
 export default IngredientDetails;

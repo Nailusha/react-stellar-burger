@@ -14,7 +14,6 @@ import { allOrdersInf } from "../../services/store/selector/allOrders/allOrders"
 import { ingredientSelector } from "../../services/store/selector/ingredientSelector";
 import { FormattedDate } from "@ya.praktikum/react-developer-burger-ui-components";
 
-
 import { TingredintsConstructor, Torder } from "../../utils/types";
 import { TFeedOrder } from "../../utils/live-table";
 
@@ -42,8 +41,6 @@ export default function Feed() {
     return totalPrice;
   }
 
-
-
   useEffect(() => {
     dispatch(connect(ORDERS_ALL));
 
@@ -59,7 +56,7 @@ export default function Feed() {
           Лента заказов
         </h1>
         <section className={`${styles.orders} custom-scroll pr-2`}>
-          {ordersData.map((item) => {
+          {ordersData.map((item: any) => {
             return (
               <Link
                 className={styles.link}

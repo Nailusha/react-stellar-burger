@@ -3,7 +3,7 @@ import { useRef } from "react";
 import styles from "./app-main.module.css";
 
 import BurgerIngingredientsTab from "../BurgerIngredients/burger-ingredient-tab/burger-ingredient-tab";
-import BurgerIngredients from "../BurgerIngredients/burger-ingridient/burger-ingredient";
+import BurgerIngredients from "../BurgerIngredients/burger-ingredient-head/burger-ingredient-head";
 import BurgerConstructorAll from "../BurgerConstructor/burger-constructor-all/burger-constructor-all";
 import BurgerConstructor from "../BurgerConstructor/burger-constructor";
 
