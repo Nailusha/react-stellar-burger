@@ -1,4 +1,4 @@
-.burgerIngredient {
+.burgerIngredientBlock {
   display: grid;
   grid-template-columns: min-content min-content;
   column-gap: 24px;
@@ -10,4 +10,9 @@
   font-size: 24px;
   font-weight: 700;
   line-height: 30px;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--text-primary-light-standart-text, #f2f2f3);
 }

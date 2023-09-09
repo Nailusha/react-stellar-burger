@@ -10,11 +10,8 @@ const initialState = {
 const burgerIngredientsSlice = createSlice({
   name: "ingredients",
   initialState,
-  
-
   extraReducers: (builder) => {
     builder
-      // Add reducers for additional action types here, and handle loading state as needed
       .addCase(fetchIngredients.pending.type, (state) => {
         state.isLoding = false;
         state.error = " ";
