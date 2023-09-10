@@ -1,7 +1,10 @@
 import React, { FC, useEffect } from "react";
 import styles from "./order-page.module.css";
 
-import { CurrencyIcon, FormattedDate } from "@ya.praktikum/react-developer-burger-ui-components";
+import {
+  CurrencyIcon,
+  FormattedDate,
+} from "@ya.praktikum/react-developer-burger-ui-components";
 import { useAppDispatch, useAppSelector } from "../../services/hooks/hooks";
 import { ingredientSelector } from "../../services/store/selector/ingredientSelector";
 import { OrderList } from "../order-icon/order-icon";

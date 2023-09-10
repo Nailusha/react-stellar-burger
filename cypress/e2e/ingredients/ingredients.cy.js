@@ -68,11 +68,11 @@ describe("Тестируем работу модального окна", () => 
     cy.get('[data-test="login-form"]').as("loginForm");
 
     cy.get("@loginEmaile")
-      .type("sh95@bk.ru") // Вводим текст в инпут
-      .should("have.value", "sh95@bk.ru"); // Проверяем, что значение инпута действительно изменилось на то которое указали
+      .type("yakimovanailusha@yandex.ru") // Вводим текст в инпут
+      .should("have.value", "yakimovanailusha@yandex.ru"); // Проверяем, что значение инпута действительно изменилось на то которое указали
     cy.get("@loginPassword")
-      .type("qwerty123")
-      .should("have.value", "qwerty123");
+      .type("221290")
+      .should("have.value", "221290");
 
     cy.get("@loginForm").find("button").click();
 

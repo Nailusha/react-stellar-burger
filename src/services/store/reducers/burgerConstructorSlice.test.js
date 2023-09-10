@@ -67,10 +67,5 @@ describe('burgerConstructorReducer', () => {
     })
   });
 
-
-
-
-
-
-
 })
+

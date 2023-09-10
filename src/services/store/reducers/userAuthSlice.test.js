@@ -2,50 +2,50 @@ import { dataUser } from "../../../../utils/const";
 import userSlice, { initialState } from "./userAuthSlice";
 
 describe("userSlice", () => {
-    it("Загрузка данных", () => {
-        expect(
-            userSlice(initialState, {
-                type: "user/register/pending",
-            })
-        ).toEqual({
-            user: {
-                name: '',
-                email: ''
-            },
-            isAuthChecked: false,
-            isLoding: true,
-            error: " ",
-        });
+  it("Загрузка данных", () => {
+    expect(
+      userSlice(initialState, {
+        type: "user/register/pending",
+      })
+    ).toEqual({
+      user: {
+        name: '',
+        email: ''
+      },
+      isAuthChecked: false,
+      isLoding: true,
+      error: " ",
     });
+  });
 
-    it("Данные загружены", () => {
-        expect(
-            userSlice(initialState, {
-                type: "user/register/fulfilled",
-                payload: dataUser,
-            })
-        ).toEqual({
-            user: dataUser.user,
-            isAuthChecked: true,
-            isLoding: false,
-            error: " ",
-        });
+  it("Данные загружены", () => {
+    expect(
+      userSlice(initialState, {
+        type: "user/register/fulfilled",
+        payload: dataUser,
+      })
+    ).toEqual({
+      user: dataUser.user,
+      isAuthChecked: true,
+      isLoding: false,
+      error: " ",
     });
+  });
 
-    it("Ошибка получения данных", () => {
-        expect(
-            userSlice(initialState, {
-                type: "user/register/rejected",
-                payload: "Ошибка",
-            })
-        ).toEqual({
-            user: {
-                name: '',
-                email: ''
-            },
-            isAuthChecked: false,
-            isLoding: false,
-            error: "Ошибка",
-        });
+  it("Ошибка получения данных", () => {
+    expect(
+      userSlice(initialState, {
+        type: "user/register/rejected",
+        payload: "Ошибка",
+      })
+    ).toEqual({
+      user: {
+        name: '',
+        email: ''
+      },
+      isAuthChecked: false,
+      isLoding: false,
+      error: "Ошибка",
     });
+  });
 });

@@ -1,7 +1,7 @@
 import modalOverlayReducer, { clickOpen, clickOrderList, initialState } from "./modalOverlaySlice";
 
 describe("modalOverlayReducer", () => {
-  it('Тест начальное значние', () => {
+  it('Тест начальное значние стэйта', () => {
     expect(modalOverlayReducer(undefined, {})).toEqual(initialState)
   });
 
