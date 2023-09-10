@@ -1,6 +1,15 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { setAuthChecked, setUser } from "../services/store/reducers/userAuthSlice";
-import { TForgotPassword, TLogin, TProfile, TResetPassword, TingredintsConstructor } from "./types";
+import {
+  setAuthChecked,
+  setUser,
+} from "../services/store/reducers/userAuthSlice";
+import {
+  TForgotPassword,
+  TLogin,
+  TProfile,
+  TResetPassword,
+  TingredintsConstructor,
+} from "./types";
 
 export const BASE_URL = "https://norma.nomoreparties.space/api";
 export const ORDERS_ALL = "wss://norma.nomoreparties.space/orders/all";
