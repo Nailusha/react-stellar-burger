@@ -1,11 +1,11 @@
 import React, { FC, useEffect } from "react";
 import styles from "./order-page.module.css";
-import { useParams } from "react-router-dom";
-import { CurrencyIcon, FormattedDate } from "@ya.praktikum/react-developer-burger-ui-components";
 
+import { CurrencyIcon, FormattedDate } from "@ya.praktikum/react-developer-burger-ui-components";
 import { useAppDispatch, useAppSelector } from "../../services/hooks/hooks";
 import { ingredientSelector } from "../../services/store/selector/ingredientSelector";
 import { OrderList } from "../order-icon/order-icon";
+import { useParams } from "react-router-dom";
 import { allOrdersInf } from "../../services/store/selector/allOrders/allOrders";
 import { connect, wsClose } from "../../services/store/reducers/socket/actions";
 import { ORDERS_ALL, fetchOrder } from "../../utils/api";

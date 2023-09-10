@@ -1,3 +1,5 @@
-export const constructorBunSelector = (store: any) => {
-    return store.constIngredient.draggedBun;
-  };
+import { RootState } from "../../../../utils/types";
+
+export const constructorBunSelector = (store:RootState) => {
+  return store.constIngredient.draggedBun;
+};

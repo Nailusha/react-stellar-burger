@@ -1,3 +1,3 @@
-export const detailsSelector = (store: any) => {
-    return store.ingredDetails.selctIngredient;
-  };
+export const detailsSelector = (store: { orderDetails: { order: any; }; }) => {
+  return store.orderDetails.order;
+};

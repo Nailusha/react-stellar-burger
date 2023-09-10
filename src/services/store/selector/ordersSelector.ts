@@ -1,3 +1,5 @@
-export const orderSelector = (store: any) => {
-    return store.ingredDetails.selctIngredient;
-  };
+import { RootState } from "../../../utils/types";
+
+export const orderSelector = (store:RootState) => {
+  return store.ingredDetails.selctIngredient;
+};

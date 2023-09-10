@@ -33,5 +33,3 @@ export const wsReducer = createReducer(initialState, (builder) => {
       state.data = action.payload;
     });
 });
-
-

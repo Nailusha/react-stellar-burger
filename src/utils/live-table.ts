@@ -42,6 +42,11 @@ export type TWsData = {
     wsConnected: boolean;
   }
 
+
+
+
+
+
 export enum LiveTableActionType {
     DATA = 'data',
     INSERT = 'insert',
@@ -81,3 +86,5 @@ export type Move = {
 export type LiveTableAction = Insert | Data | Delete | Update | Move;
 
 export type LiveTableActions = Array<LiveTableAction>;
+
+

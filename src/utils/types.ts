@@ -29,7 +29,7 @@ export type TConstructorCard = {
 export type TWithChildren<T> = T & { children?: React.ReactNode };
 
 export type TingredientType = {
-  productName: "Булки" | "Соусы" | "Начинки" ;
+  productName: "Булки" | "Соусы" | "Начинки";
   typeProduct: "bun" | "main" | "sauce" | null;
 };
 
