@@ -6,7 +6,7 @@ import { checkUserAuth } from "../../utils/api";
 import Preloader from "../preloder/preloder";
 import { useAppDispatch, useAppSelector } from "../../services/hooks/hooks";
 
-const Protected = ({ onlyUnAuth = false, component }:{ onlyUnAuth: boolean, component }) => {
+const Protected = ({ onlyUnAuth = false, component }:{ onlyUnAuth: boolean, component: any }) => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
