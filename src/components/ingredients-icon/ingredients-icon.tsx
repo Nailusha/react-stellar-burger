@@ -20,9 +20,8 @@ export const IngredientsIcon: FC<Props> = ({
   count,
 }) => {
   const ingredients = useAppSelector(ingredientSelector);
-  const { image_mobile, name, price } = ingredients.filter(
-    (item: any) => item._id === ingredient
-  )[0];
+  const { image_mobile, name, price } = (
+    (item) => item._id === ingredient);
 
   const style = shift
     ? {

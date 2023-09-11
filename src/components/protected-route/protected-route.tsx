@@ -1,11 +1,12 @@
 import { Navigate, useLocation } from "react-router-dom";
 import React, { useEffect } from "react";
+
 import { setAuthChecked } from "../../services/store/reducers/userAuthSlice";
 import { checkUserAuth } from "../../utils/api";
 import Preloader from "../preloder/preloder";
 import { useAppDispatch, useAppSelector } from "../../services/hooks/hooks";
 
-const Protected = ({ onlyUnAuth = false, component }:{ onlyUnAuth: boolean, component: any }) => {
+const Protected = ({ onlyUnAuth = false, component }:{ onlyUnAuth: boolean, component }) => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -13,8 +14,8 @@ const Protected = ({ onlyUnAuth = false, component }:{ onlyUnAuth: boolean, comp
     dispatch(checkUserAuth());
   }, [dispatch]);
 
-  const isAuthChecked = useAppSelector((store: any) => store.userStatus.isAuthChecked) as boolean;
-  const user = useAppSelector((store: any) => store.userStatus.user) as string;
+  const isAuthChecked = useAppSelector((store) => store.userStatus.isAuthChecked);
+  const user = useAppSelector((store) => store.userStatus.user);
   const location = useLocation();
 
   if (!isAuthChecked) {
@@ -40,3 +41,4 @@ const Protected = ({ onlyUnAuth = false, component }:{ onlyUnAuth: boolean, comp
 
 export const OnlyAuth = (props: any) => <Protected onlyUnAuth={false} {...props} />;
 export const OnlyUnAuth = (props: any) => <Protected onlyUnAuth={true} {...props} />;
+

@@ -1,8 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import {
-  setAuthChecked,
-  setUser,
-} from "../services/store/reducers/userAuthSlice";
+import {setAuthChecked,setUser} from "../services/store/reducers/userAuthSlice";
+
 import {
   TForgotPassword,
   TLogin,
@@ -161,21 +159,20 @@ const fetchWithRefresh = async (url: string, options: any) => {
 };
 
 export const getUser = () => {
-  return (dispatch: (arg0: { payload: any; type: "user/setUser" }) => void) => {
-    return fetchWithRefresh(`${BASE_URL}/auth/user`, {
+  return async (dispatch: (arg0: { payload: any; type: "user/setUser" }) => void) => {
+    const res = await fetchWithRefresh(`${BASE_URL}/auth/user`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
         authorization: localStorage.getItem("accessToken"),
       },
-    }).then((res) => {
-      console.log(res);
-      if (res.success) {
-        dispatch(setUser(res.user));
-      } else {
-        return Promise.reject("Ошибка данных с сервера");
-      }
     });
+    console.log(res);
+    if (res.success) {
+      dispatch(setUser(res.user));
+    } else {
+      return Promise.reject("Ошибка данных с сервера");
+    }
   };
 };
 

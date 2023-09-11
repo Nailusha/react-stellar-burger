@@ -11,7 +11,7 @@ function IngredientDetailsSingle({ isSinglePage = true }) {
   const ingredientsData = useAppSelector(memoIngredientsSelector);
 
   const detailsIngredient = ingredientsData.find(
-    (ingredient: any) => ingredient._id === _id
+    (ingredient) => ingredient._id === _id
   );
 
   if (!detailsIngredient) return null

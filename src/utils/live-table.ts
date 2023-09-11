@@ -42,11 +42,6 @@ export type TWsData = {
     wsConnected: boolean;
   }
 
-
-
-
-
-
 export enum LiveTableActionType {
     DATA = 'data',
     INSERT = 'insert',

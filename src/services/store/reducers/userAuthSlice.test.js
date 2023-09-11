@@ -1,4 +1,4 @@
-import { dataUser } from "../../../../utils/const";
+import { dataUser } from "../../../utils/const";
 import userSlice, { initialState } from "./userAuthSlice";
 
 describe("userSlice", () => {

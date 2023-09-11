@@ -7,8 +7,6 @@ export type TStateDetails = {
   count: 0,
 };
 
-
-
 export const initialState = {
   selctIngredient: [],
   clickStutus: false,
