@@ -9,6 +9,7 @@
     "@types/redux": "^3.6.0",
     "@ya.praktikum/react-developer-burger-ui-components": "^1.14.0",
     "clsx": "^1.2.1",
+    "gh-pages": "^6.0.0",
     "immutability-helper": "^3.1.1",
     "prop-types": "^15.8.1",
     "react": "^17.0.1",
