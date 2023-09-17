@@ -1,12 +1,18 @@
 import { Navigate, useLocation } from "react-router-dom";
 import React, { useEffect } from "react";
-
 import { setAuthChecked } from "../../services/store/reducers/userAuthSlice";
 import { checkUserAuth } from "../../utils/api";
 import Preloader from "../preloder/preloder";
 import { useAppDispatch, useAppSelector } from "../../services/hooks/hooks";
+import { ReactElement } from "react";
 
-const Protected = ({ onlyUnAuth = false, component }:{ onlyUnAuth: boolean, component: ReactElement }) => {
+const Protected = ({
+  onlyUnAuth = false,
+  component,
+}: {
+  onlyUnAuth: boolean;
+  component: ReactElement; // Type the component prop as ReactElement
+}): ReactElement => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -20,7 +26,7 @@ const Protected = ({ onlyUnAuth = false, component }:{ onlyUnAuth: boolean, comp
 
   if (!isAuthChecked) {
     // Запрос еще выполняется
-    return <Preloader/>; // или прелоадер
+    return <Preloader />; // или прелоадер
   }
 
   if (onlyUnAuth && user) {
