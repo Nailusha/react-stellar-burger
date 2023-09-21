@@ -2,7 +2,6 @@ import { Button, EmailInput, PasswordInput } from "@ya.praktikum/react-developer
 import styles from "./login.module.css";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
 import { TLogin } from "../../utils/types";
 import { useAppDispatch } from "../../services/hooks/hooks";
 import { loginUser } from "../../utils/api";
@@ -28,13 +27,14 @@ export const Login = () => {
     <div className={styles.container}>
       <h2 className={`text text_type_main-medium mb-6`}>Вход</h2>
 
-      <form className={styles.form} onSubmit={onSubmit}>
+      <form className={styles.form} onSubmit={onSubmit} data-test={"login-form"}>
         <div className="mb-6">
           <EmailInput
             onChange={onChange}
             value={value.email || ""}
             name={"email"}
             isIcon={false}
+            data-test={'loginEmaile'}
           />
         </div>
         <div className="mb-6">
@@ -43,6 +43,7 @@ export const Login = () => {
             value={value?.password || ""}
             name="password"
             extraClass="mb-2"
+            data-test={'loginPassword'}
           />
         </div>
         <Button type="primary" size="large" htmlType={"submit"}>

@@ -1,3 +1,5 @@
-export const constructorSelector = (store: any) => {
-    return store.constIngredient.draggedIngredients;
-  };
+import { RootState } from "../../../../utils/types";
+
+export const constructorSelector = (store:RootState) => {
+  return store.constIngredient.draggedIngredients;
+};

@@ -1,10 +1,8 @@
-import React from "react";
-import styles from "./header-list.module.css";
-
+import { Logo } from "@ya.praktikum/react-developer-burger-ui-components";
 import { BurgerIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 import { ListIcon } from "@ya.praktikum/react-developer-burger-ui-components";
-import { Logo } from "@ya.praktikum/react-developer-burger-ui-components";
 import { ProfileIcon } from "@ya.praktikum/react-developer-burger-ui-components";
+import styles from "./header-list.module.css";
 import { Link, NavLink } from "react-router-dom";
 
 function HeaderList() {
@@ -40,9 +38,9 @@ function HeaderList() {
           </ul>
         </li>
         <li className={styles.linkList_item}>
-          <a>
+          <Link to={'/'}>
             <Logo />
-          </a>
+          </Link>
         </li>
 
         <li className={styles.linkList_item}>

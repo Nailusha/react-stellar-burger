@@ -4,8 +4,15 @@ import { setAuthChecked } from "../../services/store/reducers/userAuthSlice";
 import { checkUserAuth } from "../../utils/api";
 import Preloader from "../preloder/preloder";
 import { useAppDispatch, useAppSelector } from "../../services/hooks/hooks";
+import { ReactElement } from "react";
 
-const Protected = ({ onlyUnAuth = false, component }:{ onlyUnAuth: boolean, component: any }) => {
+const Protected = ({
+  onlyUnAuth = false,
+  component,
+}: {
+  onlyUnAuth: boolean;
+  component: ReactElement; // Type the component prop as ReactElement
+}): ReactElement => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -13,13 +20,13 @@ const Protected = ({ onlyUnAuth = false, component }:{ onlyUnAuth: boolean, comp
     dispatch(checkUserAuth());
   }, [dispatch]);
 
-  const isAuthChecked = useAppSelector((store: any) => store.userStatus.isAuthChecked) as boolean;
-  const user = useAppSelector((store: any) => store.userStatus.user) as string;
+  const isAuthChecked = useAppSelector((store) => store.userStatus.isAuthChecked);
+  const user = useAppSelector((store) => store.userStatus.user);
   const location = useLocation();
 
   if (!isAuthChecked) {
     // Запрос еще выполняется
-    return <Preloader/>; // или прелоадер
+    return <Preloader />; // или прелоадер
   }
 
   if (onlyUnAuth && user) {
@@ -40,3 +47,4 @@ const Protected = ({ onlyUnAuth = false, component }:{ onlyUnAuth: boolean, comp
 
 export const OnlyAuth = (props: any) => <Protected onlyUnAuth={false} {...props} />;
 export const OnlyUnAuth = (props: any) => <Protected onlyUnAuth={true} {...props} />;
+

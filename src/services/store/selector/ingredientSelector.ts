@@ -1,3 +1,5 @@
-export const ingredientSelector = (store: any) => {
-    return store.ingredients.ingredients;
-  };
+import { RootState } from "../../../utils/types";
+
+export const ingredientSelector = (store:RootState) => {
+  return store.ingredients.ingredients;
+};

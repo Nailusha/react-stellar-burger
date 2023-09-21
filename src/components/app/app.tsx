@@ -2,20 +2,18 @@ import { useState, useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 
 
-
-import Modal from "../modal/modal";
-import OrderDetails from "../modal/order-details/order-details";
-import Preloader from "../preloder/preloder";
-import Layout from "../../pages/layout/layout";
 import ResetPassword from "../../pages/reset-password/reset-password";
 import Profile from "../../pages/profile/profile";
+import Layout from "../../pages/layout/layout";
 import OrdersPage from "../../pages/orders/orders";
 import IngredientDetails from "../../pages/ingredients-details/ingredients-details";
 import NotFound from "../../pages/not-found/not-found";
 import ForgotPassword from "../../pages/forgot-password/forgot-password";
 import AppMain from "../main/app-main/app-main";
 import Feed from "../../pages/feed/feed";
-
+import Modal from "../modal/modal";
+import OrderDetails from "../modal/order-details/order-details";
+import Preloader from "../preloder/preloder";
 import { fetchIngredients } from "../../services/store/reducers/ingredientQuery";
 import { ingredientSelector } from "../../services/store/selector/ingredientSelector";
 import { OnlyAuth, OnlyUnAuth } from "../protected-route/protected-route";
@@ -34,9 +32,10 @@ import { detailsSelector } from "../../services/store/selector/detailsSelector";
 const App = () => {
   const [isloding, setIsLoding] = useState(false);
   const ingredients = useAppSelector(ingredientSelector);
+  const isAuthChecked = useAppSelector((store) => store.userStatus.isAuthChecked);
 
   const isClickStutusDetails = useAppSelector(
-    (state: any) => state.orderDetails.clickStutus
+    (state) => state.orderDetails.clickStutus
   ) as boolean;
 
   const location = useLocation();
@@ -51,7 +50,6 @@ const App = () => {
   };
 
 
-
   const closeModal = () => {
     dispatch(clickOpen(false));
     dispatch(clickDetails(false));
@@ -60,6 +58,7 @@ const App = () => {
   useEffect(() => {
     dispatch(fetchIngredients());
     dispatch(checkUserAuth());
+    isAuthChecked&&
     dispatch(getUser());
   }, [dispatch]);
 
@@ -103,7 +102,7 @@ const App = () => {
           />
           <Route
             path="/ingredients/:id"
-            element={<OrderInformation modal={false} />}
+            element={<IngredientDetails isSinglePage/>}
           />
           <Route path="*" element={<NotFound />} />
         </Route>
